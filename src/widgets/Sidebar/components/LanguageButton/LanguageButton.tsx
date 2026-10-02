@@ -11,7 +11,7 @@ export const LanguageButton: React.FC = () => {
   }
   return (
     <button
-      className="w-12 h-12 text-primary rounded-full transition-colors hover:text-white hover:border hover::border-white active:border active:border-white  "
+      className="w-12 h-12 px-2 text-primary rounded-full transition-colors hover:text-white hover:border hover::border-white active:border active:border-white  "
       onClick={changeLanguage}
     >
       {i18n.language === 'ru' ? 'Рус' : 'Eng'}
