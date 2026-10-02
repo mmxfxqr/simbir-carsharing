@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: #0ec261;
+  --color-primary-hover: #026e47;
+  --color-primary-click: #013c27;
+
+  --color-dark: #121212;
+  --color-gray: #999999;
+
+  --color-white: #eeeeee;
+
+  --font-roboto: 'Roboto', sans-serif;
+}
+
+body {
+  font-family: var(--font-roboto);
+  font-size: small;
+  cursor: url('/public/cursors/cursor.svg'), auto;
+}
+
+button,
+a,
+[role='button'],
+input[type='checkbox'],
+input[type='radio'],
+select {
+  cursor: url('/public//cursors/hover-cursor.svg'), pointer;
+}
