@@ -7,7 +7,10 @@ export const BurgerButton: FC<BurgerButtonProps> = ({
 }) => {
   return (
     <button className="px-4" onClick={onBurgerClick}>
-      <img src={isOpen ? '/close-sidebar.svg' : '/burger.svg'} alt="Menu" />
+      <img
+        src={isOpen ? '/sidebar/close-sidebar.svg' : '/sidebar/burger.svg'}
+        alt="Menu"
+      />
     </button>
   )
 }
