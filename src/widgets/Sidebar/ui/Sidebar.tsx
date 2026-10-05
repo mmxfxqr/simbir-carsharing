@@ -27,10 +27,10 @@ export const Sidebar: FC = () => {
   return (
     <>
       <div
-        className="fixed inset-0 bg-[#151B1F] z-1 opacity-81"
+        className="fixed inset-0 bg-[#151B1F] z-10 opacity-81"
         onClick={() => setIsOpen(false)}
       />
-      <div className="fixed inset-y-0 left-0 bg-dark w-[50vw] pb-4 flex flex-col z-10">
+      <div className="fixed inset-y-0 left-0 bg-dark w-[50vw] pb-4 flex flex-col z-20">
         <div className="absolute top-8 left-0">
           <BurgerButton onBurgerClick={handleBurgerClick} isOpen={isOpen} />
         </div>
