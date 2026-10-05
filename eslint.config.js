@@ -1,6 +1,6 @@
 import globals from 'globals'
 
-import {defineConfig, globalIgnores} from 'eslint/config'
+import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
   globalIgnores(['dist']),

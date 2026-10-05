@@ -1,1 +1,1 @@
-export {BurgerButton} from './BurgerButton'
+export { BurgerButton } from './BurgerButton'

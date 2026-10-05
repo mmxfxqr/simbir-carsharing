@@ -4,7 +4,7 @@ import type { FC } from 'react'
 
 export const HomePage: FC = () => {
   return (
-    <div className="flex justify-between h-full">
+    <div className="flex h-full justify-between">
       <HomeInfo />
 
       <HomeSlider />

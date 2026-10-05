@@ -6,7 +6,7 @@ export const Spinner: FC<SpinnerProps> = ({ className }) => {
   return (
     <div
       className={clsx(
-        'w-6 h-6 border-3 border-white border-t-primary rounded-full animate-spin',
+        'border-t-primary h-6 w-6 animate-spin rounded-full border-3 border-white',
         className,
       )}
     />

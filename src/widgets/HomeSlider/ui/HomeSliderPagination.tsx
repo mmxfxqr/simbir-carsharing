@@ -41,7 +41,7 @@ export const HomeSliderPagination: FC<HomeSliderPaginationProps> = ({
           key={index}
           type="button"
           onClick={() => goTo(index)}
-          className={`h-2 w-2 rounded-full transition-colors  ${
+          className={`h-2 w-2 rounded-full transition-colors ${
             selectedIndex === index ? 'bg-primary' : 'bg-white'
           }`}
           aria-label={`Перейти к слайду ${index + 1}`}

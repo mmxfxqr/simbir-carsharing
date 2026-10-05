@@ -25,12 +25,12 @@ export const HomeSlider: FC = () => {
 
               <div className="absolute inset-0 bg-linear-to-b from-transparent to-black" />
 
-              <div className="absolute top-59.25 left-1/2 -translate-x-1/2 max-w-123.75">
-                <h1 className="mb-2 text-[40px] text-white font-medium">
+              <div className="absolute top-59.25 left-1/2 max-w-123.75 -translate-x-1/2">
+                <h1 className="mb-2 text-[40px] font-medium text-white">
                   {slide.title}
                 </h1>
 
-                <p className="mb-8 text-gray text-[24px] font-light leading-[90%]">
+                <p className="text-gray mb-8 text-[24px] leading-[90%] font-light">
                   {slide.desc}
                 </p>
 

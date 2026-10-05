@@ -4,11 +4,11 @@ import type { FC } from 'react'
 export const SocialMedia: FC<SocialMediaProps> = ({ className, icons }) => {
   return (
     <div className={className}>
-      <div className="flex gap-4 ">
+      <div className="flex gap-4">
         {icons.map((Icon, id) => (
           <button
             key={id}
-            className="text-white hover:text-primary transition-colors"
+            className="hover:text-primary text-white transition-colors"
           >
             <Icon />
           </button>

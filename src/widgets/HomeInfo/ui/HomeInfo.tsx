@@ -5,7 +5,7 @@ import type { FC } from 'react'
 
 export const HomeInfo: FC = () => {
   return (
-    <div className="h-screen w-full pr-16 flex flex-col justify-between py-8 flex-1">
+    <div className="flex h-screen w-full flex-1 flex-col justify-between py-8 pr-16">
       <HomeInfoHeader />
       <HomeInfoBody />
       <HomeInfoFooter />

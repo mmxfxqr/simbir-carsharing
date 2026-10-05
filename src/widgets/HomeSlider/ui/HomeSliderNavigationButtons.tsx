@@ -10,14 +10,14 @@ export const HomeSliderNavigationButtons: FC<
   return (
     <>
       <button
-        className="absolute left-0 top-0 z-5 h-full w-16 flex items-center justify-center hover:bg-primary/20"
+        className="hover:bg-primary/20 absolute top-0 left-0 z-5 flex h-full w-16 items-center justify-center"
         onClick={goToPrev}
       >
         <img src="/slider/left.svg" alt="Назад" />
       </button>
 
       <button
-        className="absolute right-0 top-0 z-5 h-full w-16 flex items-center justify-center hover:bg-primary/20"
+        className="hover:bg-primary/20 absolute top-0 right-0 z-5 flex h-full w-16 items-center justify-center"
         onClick={goToNext}
       >
         <img src="/slider/right.svg" alt="Вперёд" />

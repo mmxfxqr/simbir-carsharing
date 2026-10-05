@@ -18,7 +18,7 @@ export const Sidebar: FC = () => {
 
   if (!isOpen) {
     return (
-      <div className="bg-dark w-16 inset-y-0 pt-8 pb-4 flex flex-col items-center justify-between">
+      <div className="bg-dark inset-y-0 flex w-16 flex-col items-center justify-between pt-8 pb-4">
         <BurgerButton onBurgerClick={handleBurgerClick} isOpen={isOpen} />
         <LanguageButton />
       </div>
@@ -27,20 +27,20 @@ export const Sidebar: FC = () => {
   return (
     <>
       <div
-        className="fixed inset-0 bg-[#151B1F] z-10 opacity-81"
+        className="fixed inset-0 z-10 bg-[#151B1F] opacity-81"
         onClick={() => setIsOpen(false)}
       />
-      <div className="fixed inset-y-0 left-0 bg-dark w-[50vw] pb-4 flex flex-col z-20">
+      <div className="bg-dark fixed inset-y-0 left-0 z-20 flex w-[50vw] flex-col pb-4">
         <div className="absolute top-8 left-0">
           <BurgerButton onBurgerClick={handleBurgerClick} isOpen={isOpen} />
         </div>
 
-        <div className="flex flex-col  h-full ml-7 md:ml-24.25 xl:ml-32 mt-20  sm:justify-center sm:mt-0">
-          <div className="flex flex-col  w-full max-w-140 text-[22px] lg:text-[32px] md:text-[28px] ">
+        <div className="mt-20 ml-7 flex h-full flex-col sm:mt-0 sm:justify-center md:ml-24.25 xl:ml-32">
+          <div className="flex w-full max-w-140 flex-col text-[22px] md:text-[28px] lg:text-[32px]">
             {sideBarItems.map((item, id) => (
               <a
                 key={id}
-                className=" text-white hover:text-primary transition-colors "
+                className="hover:text-primary text-white transition-colors"
               >
                 {item}
               </a>

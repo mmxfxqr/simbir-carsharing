@@ -12,7 +12,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   return (
     <button
       className={clsx(
-        'bg-primary text-white rounded-lg h-12 text-[18px] font-medium hover:brightness-90 focus:brightness-90 active:brightness-80 flex items-center justify-center',
+        'bg-primary flex h-12 items-center justify-center rounded-lg text-[18px] font-medium text-white hover:brightness-90 focus:brightness-90 active:brightness-80',
         className,
       )}
       {...props}
