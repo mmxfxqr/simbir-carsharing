@@ -1,4 +1,4 @@
-import { RootLayout } from '@app/layouts/RootLayout/RootLayout'
+import { RootLayout } from '@app/layouts/RootLayout'
 import { HomePage } from '@pages/HomePage'
 import { createBrowserRouter } from 'react-router-dom'
 

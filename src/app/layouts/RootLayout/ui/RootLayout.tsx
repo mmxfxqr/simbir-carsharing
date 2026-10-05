@@ -1,5 +1,5 @@
-import { Sidebar } from '@widgets/index'
-import { type FC } from 'react'
+import { Sidebar } from '@widgets/Sidebar'
+import type { FC } from 'react'
 import { Outlet } from 'react-router-dom'
 
 export const RootLayout: FC = () => {

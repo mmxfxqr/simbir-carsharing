@@ -1,5 +1,5 @@
+import type { FC } from 'react'
 import type { BurgerButtonProps } from './types'
-import { type FC } from 'react'
 
 export const BurgerButton: FC<BurgerButtonProps> = ({
   onBurgerClick,
