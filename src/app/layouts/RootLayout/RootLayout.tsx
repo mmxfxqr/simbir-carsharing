@@ -1,8 +1,8 @@
-import {Sidebar} from '@/widgets'
-import React from 'react'
-import {Outlet} from 'react-router-dom'
+import { Sidebar } from '@widgets/index'
+import { type FC } from 'react'
+import { Outlet } from 'react-router-dom'
 
-export const RootLayout: React.FC = () => {
+export const RootLayout: FC = () => {
   return (
     <div className="flex h-screen">
       <Sidebar />

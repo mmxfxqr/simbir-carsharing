@@ -1,6 +1,6 @@
 import globals from 'globals'
 
-import { defineConfig, globalIgnores } from 'eslint/config'
+import {defineConfig, globalIgnores} from 'eslint/config'
 
 export default defineConfig([
   globalIgnores(['dist']),
@@ -9,6 +9,9 @@ export default defineConfig([
     extends: 'airbnb',
     languageOptions: {
       globals: globals.browser,
+    },
+    rules: {
+      'object-curly-spacing': ['error', 'always'],
     },
   },
 ])

@@ -17,7 +17,7 @@
 body {
   font-family: var(--font-roboto);
   font-size: small;
-  cursor: url('/public/cursors/cursor.svg'), auto;
+  cursor: url('/cursors/cursor.svg'), auto;
 }
 
 button,
@@ -26,5 +26,5 @@ a,
 input[type='checkbox'],
 input[type='radio'],
 select {
-  cursor: url('/public//cursors/hover-cursor.svg'), pointer;
+  cursor: url('/cursors/hover-cursor.svg'), pointer;
 }
