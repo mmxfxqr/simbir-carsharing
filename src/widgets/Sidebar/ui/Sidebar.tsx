@@ -19,7 +19,7 @@ export const Sidebar: FC = () => {
 
   if (!isOpen) {
     return (
-      <div className="bg-dark inset-y-0 flex w-16 flex-col items-center justify-between pt-8 pb-4 text-white max-md:fixed max-md:inset-auto max-md:top-4 max-md:left-4 max-md:z-30 max-md:h-12 max-md:w-12 max-md:bg-[#FFF] max-md:p-0 max-md:text-black">
+      <div className="bg-dark inset-y-0 flex h-full w-16 flex-col items-center justify-between pt-8 pb-4 text-white max-md:fixed max-md:inset-auto max-md:top-4 max-md:left-4 max-md:z-30 max-md:h-12 max-md:w-12 max-md:bg-[#FFF] max-md:p-0 max-md:text-black">
         <BurgerButton onBurgerClick={handleBurgerClick} isOpen={isOpen} />
         <div className="max-md:hidden">
           <LanguageButton />
