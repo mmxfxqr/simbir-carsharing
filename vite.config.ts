@@ -15,6 +15,7 @@ export default defineConfig({
       '@features': path.resolve(import.meta.dirname, './src/features'),
       '@entities': path.resolve(import.meta.dirname, './src/entities'),
       '@shared': path.resolve(import.meta.dirname, './src/shared'),
+      '@assets': path.resolve(import.meta.dirname, './src/assets'),
     },
   },
 })
