@@ -2,7 +2,7 @@ import type { HomeSliderPaginationProps } from '@widgets/HomeSlider/types'
 import { type FC } from 'react'
 
 export const HomeSliderPagination: FC<HomeSliderPaginationProps> = ({
-  handleGoTo,
+  onGoTo,
   slidesIndex,
   selectedSlideIndex,
 }) => {
@@ -12,7 +12,7 @@ export const HomeSliderPagination: FC<HomeSliderPaginationProps> = ({
         <button
           key={index}
           type="button"
-          onClick={() => handleGoTo(index)}
+          onClick={() => onGoTo(index)}
           className={`h-2 w-2 rounded-full transition-colors ${
             selectedSlideIndex === index ? 'bg-primary' : 'bg-white'
           }`}

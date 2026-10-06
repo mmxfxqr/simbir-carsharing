@@ -16,23 +16,16 @@ export const HomeSlider: FC = () => {
       <div className="h-full overflow-hidden" ref={emblaRef}>
         <div className="flex h-full">
           {slides.map((slide) => (
-            <Slide
-              key={slide.id}
-              id={slide.id}
-              title={slide.title}
-              desc={slide.desc}
-              path={slide.path}
-              buttonGradient={slide.buttonGradient}
-            />
+            <Slide key={slide.id} {...slide} />
           ))}
         </div>
       </div>
       <HomeSliderNavigationButtons
-        handleGoToNextClick={goToNext}
-        handleGoToPrevClick={goToPrev}
+        onGoToNextClick={goToNext}
+        onGoToPrevClick={goToPrev}
       />
       <HomeSliderPagination
-        handleGoTo={goTo}
+        onGoTo={goTo}
         slidesIndex={scrollSnaps}
         selectedSlideIndex={selectedIndex}
       />

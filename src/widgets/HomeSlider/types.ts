@@ -1,9 +1,9 @@
 export interface HomeSliderNavigationButtonsProps {
-  handleGoToPrevClick: () => void
-  handleGoToNextClick: () => void
+  onGoToPrevClick: () => void
+  onGoToNextClick: () => void
 }
 export interface HomeSliderPaginationProps {
-  handleGoTo: (index: number) => void
+  onGoTo: (index: number) => void
   slidesIndex: number[]
   selectedSlideIndex: number
 }

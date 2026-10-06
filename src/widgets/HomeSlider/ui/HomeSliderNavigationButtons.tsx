@@ -5,7 +5,7 @@ import type { FC } from 'react'
 
 export const HomeSliderNavigationButtons: FC<
   HomeSliderNavigationButtonsProps
-> = ({ handleGoToNextClick, handleGoToPrevClick }) => {
+> = ({ onGoToNextClick, onGoToPrevClick }) => {
   return (
     <>
       {navigationButtonAtr.map((button, index) => (
@@ -16,9 +16,7 @@ export const HomeSliderNavigationButtons: FC<
             button.position,
           )}
           onClick={
-            button.direction === 'prev'
-              ? handleGoToPrevClick
-              : handleGoToNextClick
+            button.direction === 'prev' ? onGoToPrevClick : onGoToNextClick
           }
         >
           <img src={button.image} alt={button.alt} />

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 
 export const useHomeSlider = (emblaApi?: EmblaCarouselType) => {
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([])
-  const [selectedIndex, setSelectedIndex] = useState(0)
+  const [selectedIndex, setSelectedIndex] = useState<number>(0)
 
   useEffect(() => {
     if (!emblaApi) return

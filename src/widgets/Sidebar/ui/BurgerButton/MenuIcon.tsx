@@ -11,20 +11,20 @@ export const MenuIcon: FC<MenuItemProps> = ({ isOpen }) => {
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_28_5)">
+        <g clipPath="url(#clip0_28_5)">
           <path
             d="M24 8L8 24"
             stroke="currentColor"
-            stroke-width="3"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M8 8L24 24"
             stroke="currentColor"
-            stroke-width="3"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </g>
         <defs>
@@ -47,23 +47,23 @@ export const MenuIcon: FC<MenuItemProps> = ({ isOpen }) => {
       <path
         d="M4 16H28"
         stroke="currentColor"
-        stroke-width="3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M4 8H28"
         stroke="currentColor"
-        stroke-width="3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M4 24H28"
         stroke="currentColor"
-        stroke-width="3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   )
