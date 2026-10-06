@@ -1,8 +1,9 @@
-import type { EmblaCarouselType } from 'embla-carousel'
-
 export interface HomeSliderNavigationButtonsProps {
-  emblaApi: EmblaCarouselType | undefined
+  handleGoToPrevClick: () => void
+  handleGoToNextClick: () => void
 }
 export interface HomeSliderPaginationProps {
-  emblaApi: EmblaCarouselType | undefined
+  handleGoTo: (index: number) => void
+  slidesIndex: number[]
+  selectedSlideIndex: number
 }

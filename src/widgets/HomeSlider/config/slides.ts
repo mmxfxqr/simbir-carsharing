@@ -1,4 +1,4 @@
-export interface Slide {
+export interface SlideProps {
   id: number
   path: string
   title: string
@@ -6,33 +6,33 @@ export interface Slide {
   buttonGradient: string
 }
 
-export const slides: Slide[] = [
+export const slides: SlideProps[] = [
   {
     id: 1,
     path: '/slider/slider-1.png',
-    title: 'Бесплатная парковка',
-    desc: 'Оставляйте машину на платных городских парковках и разрешенных местах, не нарушая ПДД, а также в аэропортах.',
+    title: 'Free parking',
+    desc: 'Leave your car in paid city parking lots and permitted spaces without violating traffic rules, as well as at airports.',
     buttonGradient: 'bg-linear-to-r from-[#13493F] to-[#0C7B1B]',
   },
   {
     id: 2,
     path: '/slider/slider-2.png',
-    title: 'Страховка',
-    desc: 'Полная страховка страховка автомобиля',
+    title: 'Insurance',
+    desc: 'Full car insurance',
     buttonGradient: 'bg-linear-to-r from-[#132949] to-[#0C7B67]',
   },
   {
     id: 3,
     path: '/slider/slider-3.png',
-    title: 'Бензин',
-    desc: 'Полный бак на любой заправке города за наш счёт',
+    title: 'Fuel',
+    desc: 'A full tank at any gas station in the city at our expense',
     buttonGradient: 'bg-linear-to-r from-[#493013] to-[#7B0C3B]',
   },
   {
     id: 4,
     path: '/slider/slider-4.png',
-    title: 'Обслуживание',
-    desc: 'Автомобиль проходит еженедельное ТО',
+    title: 'Maintenance',
+    desc: 'The car undergoes weekly maintenance',
     buttonGradient: 'bg-linear-to-r from-[#281349] to-[#720C7B]',
   },
 ]

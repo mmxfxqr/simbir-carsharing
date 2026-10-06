@@ -6,7 +6,6 @@ export const HomePage: FC = () => {
   return (
     <div className="flex h-full justify-between">
       <HomeInfo />
-
       <HomeSlider />
     </div>
   )

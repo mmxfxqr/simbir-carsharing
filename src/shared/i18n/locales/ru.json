@@ -1,7 +1,16 @@
 {
-  "welcome": "Добро пожаловать",
-  "ulyanovsk": "Ульяновск",
-  "carsharing": "Каршеринг",
-  "minute-by-minute": "Поминутная аренда авто твоего города",
-  "book": "Забронировать"
+  "Welcome": "Добро пожаловать",
+  "Ulyanovsk": "Ульяновск",
+  "Carsharing": "Каршеринг",
+  "Minute-by-minute car rental in your city": "Поминутная аренда авто твоего города",
+  "Book": "Забронировать",
+  "Free parking": "Бесплатная парковка",
+  "Leave your car in paid city parking lots and permitted spaces without violating traffic rules, as well as at airports.": "Оставляйте машину на платных городских парковках и разрешенных местах, не нарушая ПДД, а также в аэропортах.",
+  "Insurance": "Страховка",
+  "Full car insurance": "Полная страховка автомобиля",
+  "Fuel": "Бензин",
+  "A full tank at any gas station in the city at our expense": "Полный бак на любой заправке города за наш счёт",
+  "Maintenance": "Обслуживание",
+  "The car undergoes weekly maintenance": "Автомобиль проходит еженедельное ТО",
+  "More details": "Подробнее"
 }

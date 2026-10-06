@@ -1,27 +1,29 @@
+import { navigationButtonAtr } from '@widgets/HomeSlider/config/navigationButtons'
 import type { HomeSliderNavigationButtonsProps } from '@widgets/HomeSlider/types'
+import clsx from 'clsx'
 import type { FC } from 'react'
 
 export const HomeSliderNavigationButtons: FC<
   HomeSliderNavigationButtonsProps
-> = ({ emblaApi }) => {
-  const goToPrev = () => emblaApi?.scrollPrev()
-  const goToNext = () => emblaApi?.scrollNext()
-
+> = ({ handleGoToNextClick, handleGoToPrevClick }) => {
   return (
     <>
-      <button
-        className="hover:bg-primary/20 absolute top-0 left-0 z-5 flex h-full w-16 items-center justify-center"
-        onClick={goToPrev}
-      >
-        <img src="/slider/left.svg" alt="Назад" />
-      </button>
-
-      <button
-        className="hover:bg-primary/20 absolute top-0 right-0 z-5 flex h-full w-16 items-center justify-center"
-        onClick={goToNext}
-      >
-        <img src="/slider/right.svg" alt="Вперёд" />
-      </button>
+      {navigationButtonAtr.map((button, index) => (
+        <button
+          key={index}
+          className={clsx(
+            'hover:bg-primary/20 absolute top-0 z-5 flex h-full w-16 items-center justify-center',
+            button.position,
+          )}
+          onClick={
+            button.direction === 'prev'
+              ? handleGoToPrevClick
+              : handleGoToNextClick
+          }
+        >
+          <img src={button.image} alt={button.alt} />
+        </button>
+      ))}
     </>
   )
 }
