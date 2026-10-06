@@ -1,1 +1,1 @@
-export const sideBarItems = ['ПАРКОВКА', 'СТРАХОВКА', 'БЕНЗИН', 'ОБСЛУЖИВАНИЕ']
+export const sideBarItems = ['Parking', 'Insurance', 'Fuel', 'Maintenance']
