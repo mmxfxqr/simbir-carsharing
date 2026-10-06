@@ -12,7 +12,7 @@ export const HomeSlider: FC = () => {
     useHomeSlider(emblaApi)
 
   return (
-    <div className="relative h-screen flex-1">
+    <div className="relative block h-screen flex-1 max-lg:hidden">
       <div className="h-full overflow-hidden" ref={emblaRef}>
         <div className="flex h-full">
           {slides.map((slide) => (

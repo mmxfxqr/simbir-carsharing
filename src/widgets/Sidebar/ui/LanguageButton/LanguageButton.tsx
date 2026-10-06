@@ -12,7 +12,7 @@ export const LanguageButton: FC = () => {
 
   return (
     <button
-      className="text-primary hover::border-white h-12 w-12 rounded-full px-2 transition-colors hover:border hover:text-white active:border active:border-white"
+      className="text-primary hover::border-white h-12 w-12 rounded-full px-2 font-bold transition-colors hover:border hover:text-white active:border active:border-white"
       onClick={handleLanguageChange}
     >
       {i18n.language === 'ru' ? 'Рус' : 'Eng'}
