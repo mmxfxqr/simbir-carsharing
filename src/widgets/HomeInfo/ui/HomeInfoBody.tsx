@@ -1,9 +1,15 @@
 import { Button } from '@shared/ui/Button'
 import type { FC } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
 
 export const HomeInfoBody: FC = () => {
   const { t } = useTranslation()
+  const navigate = useNavigate()
+
+  const handleBookClick = () => {
+    navigate('/order')
+  }
 
   return (
     <div className="flex flex-col max-md:mt-8.5 max-md:items-center">
@@ -18,7 +24,10 @@ export const HomeInfoBody: FC = () => {
           {t('Minute-by-minute car rental in your city')}
         </h1>
       </div>
-      <Button className="mt-15 w-full max-w-62.5 max-md:mt-8 max-md:max-w-[320px]">
+      <Button
+        className="mt-15 w-full max-w-62.5 max-md:mt-8 max-md:max-w-[320px]"
+        onClick={handleBookClick}
+      >
         {t('Book')}
       </Button>
     </div>
