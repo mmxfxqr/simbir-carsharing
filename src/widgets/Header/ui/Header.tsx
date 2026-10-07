@@ -1,5 +1,6 @@
 import type { HeaderProps } from '@widgets/Header/types'
 import clsx from 'clsx'
+import mapPoint from '@assets/homepage/mapPoint.svg'
 import type { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -17,7 +18,7 @@ export const Header: FC<HeaderProps> = ({ isInnerPage }) => {
         Need for drive
       </h1>
       <div className="text-gray flex gap-2 text-[14px]">
-        <img src="/homepage/mapPoint.svg" />
+        <img src={mapPoint} />
         <h1>{t('Ulyanovsk')}</h1>
       </div>
     </div>

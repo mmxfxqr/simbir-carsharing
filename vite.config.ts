@@ -6,6 +6,7 @@ import { defineConfig } from 'vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  base: '/simbir-carsharing/',
   resolve: {
     alias: {
       '@app': path.resolve(import.meta.dirname, './src/app'),
@@ -14,6 +15,7 @@ export default defineConfig({
       '@features': path.resolve(import.meta.dirname, './src/features'),
       '@entities': path.resolve(import.meta.dirname, './src/entities'),
       '@shared': path.resolve(import.meta.dirname, './src/shared'),
+      '@assets': path.resolve(import.meta.dirname, './src/assets'),
     },
   },
 })
