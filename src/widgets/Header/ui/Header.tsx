@@ -3,9 +3,15 @@ import clsx from 'clsx'
 import mapPoint from '@assets/homepage/mapPoint.svg'
 import type { FC } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
 
 export const Header: FC<HeaderProps> = ({ isInnerPage }) => {
   const { t } = useTranslation()
+  const navigate = useNavigate()
+
+  const handleLogoClick = () => {
+    navigate('/')
+  }
 
   return (
     <div
@@ -14,9 +20,12 @@ export const Header: FC<HeaderProps> = ({ isInnerPage }) => {
         isInnerPage && 'border-b border-b-[#EEE] px-16 py-8',
       )}
     >
-      <h1 className="text-primary text-3xl font-bold max-md:mb-2">
+      <a
+        className="text-primary text-3xl font-bold max-md:mb-2"
+        onClick={handleLogoClick}
+      >
         Need for drive
-      </h1>
+      </a>
       <div className="text-gray flex gap-2 text-[14px]">
         <img src={mapPoint} />
         <h1>{t('Ulyanovsk')}</h1>

@@ -6,7 +6,6 @@ export const OrderPage: FC = () => {
   return (
     <div>
       <Header isInnerPage />
-      <h1>Заказ</h1>
       <Outlet />
     </div>
   )
