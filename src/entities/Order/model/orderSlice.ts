@@ -1,10 +1,5 @@
+import type { OrderState } from '@entities/Order/types'
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
-
-interface OrderState {
-  location: string | null
-  model: string | null
-  configuration: string | null
-}
 
 const initialState: OrderState = {
   location: null,

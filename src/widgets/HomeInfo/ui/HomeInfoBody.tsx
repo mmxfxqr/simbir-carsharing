@@ -1,3 +1,4 @@
+import { RoutePath } from '@app/config/routePath'
 import { Button } from '@shared/ui/Button'
 import type { FC } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -8,7 +9,7 @@ export const HomeInfoBody: FC = () => {
   const navigate = useNavigate()
 
   const handleBookClick = () => {
-    navigate('/order')
+    navigate(`/${RoutePath.Order}`)
   }
 
   return (

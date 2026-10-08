@@ -1,3 +1,5 @@
+import { AppConfig } from '@app/config/appConfig'
+import { RoutePath } from '@app/config/routePath'
 import { RootLayout } from '@app/layouts/RootLayout'
 import { HomePage } from '@pages/HomePage'
 import { LocationPage } from '@pages/LocationPage'
@@ -15,7 +17,7 @@ export const router = createBrowserRouter(
           element: <HomePage />,
         },
         {
-          path: 'order',
+          path: RoutePath.Order,
           element: <OrderPage />,
           children: [
             {
@@ -23,7 +25,7 @@ export const router = createBrowserRouter(
               element: <Navigate to={'location'} replace />,
             },
             {
-              path: 'location',
+              path: RoutePath.Location,
               element: <LocationPage />,
             },
           ],
@@ -32,6 +34,6 @@ export const router = createBrowserRouter(
     },
   ],
   {
-    basename: '/simbir-carsharing',
+    basename: AppConfig.baseUrl,
   },
 )
