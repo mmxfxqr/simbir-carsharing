@@ -1,1 +1,6 @@
-export { orderReducer, setLocation } from './model/orderSlice'
+export {
+  orderReducer,
+  setLocation,
+  setCity,
+  setAddress,
+} from './model/orderSlice'

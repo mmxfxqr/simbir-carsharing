@@ -1,26 +1,27 @@
 import { useAppDispatch, useAppSelector } from '@app/store'
-import { setLocation } from '@entities/Order'
+import { setAddress, setCity, setLocation } from '@entities/Order'
+import { locations } from '@pages/LocationPage/config/location'
 import { InputSelectionMenu } from '@shared/ui/InputSelectMenu'
-import { locations } from '@widgets/SelectLocation/config/locations'
-import { useState, type FC } from 'react'
+import type { FC } from 'react'
 
 export const SelectLocation: FC = () => {
-  const [selectedCity, setSelectedCity] = useState<string>(
-    Object.keys(locations)[0],
-  )
-
   const location = useAppSelector((state) => state.order.location)
+  const city = useAppSelector((state) => state.order.city)
+
   const dispatch = useAppDispatch()
+
   const handleSelectCityValue = (value: string) => {
     dispatch(setLocation(null))
-    setSelectedCity(value)
+    dispatch(setCity(value))
   }
   const handleSelecteAdressValue = (value: string) => {
-    dispatch(setLocation(`${selectedCity}, ${value}`))
+    console.log(value)
+    dispatch(setAddress(value))
+    dispatch(setLocation(`${city}, ${value}`))
   }
 
   return (
-    <div>
+    <div className="mb-11.25">
       <InputSelectionMenu
         label="Город"
         classname="mb-2"
@@ -28,11 +29,11 @@ export const SelectLocation: FC = () => {
         onSelect={handleSelectCityValue}
       />
       <InputSelectionMenu
-        key={selectedCity}
+        key={city}
         label="Пункт выдачи"
-        variants={Object.keys(locations[selectedCity] || {})}
+        variants={Object.keys(locations[city].addresses || {})}
         onSelect={handleSelecteAdressValue}
-        isDisabled={Boolean(!selectedCity)}
+        isDisabled={Boolean(!city)}
       />
       <h1>{location}</h1>
     </div>

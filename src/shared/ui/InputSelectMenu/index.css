@@ -1,0 +1,15 @@
+.dropdown-scrollbar::-webkit-scrollbar {
+  width: 2px;
+}
+
+.dropdown-scrollbar::-webkit-scrollbar-thumb {
+  background: #999;
+}
+
+.dropdown-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dropdown-scrollbar::-webkit-scrollbar-button {
+  display: none;
+}
