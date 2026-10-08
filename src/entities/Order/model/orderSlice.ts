@@ -1,5 +1,6 @@
 import type { OrderState } from '@entities/Order/types'
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
+import type { Nullable } from '@shared/types'
 
 const initialState: OrderState = {
   location: null,
@@ -11,7 +12,7 @@ const orderSlice = createSlice({
   name: 'order',
   initialState,
   reducers: {
-    setLocation: (state, action: PayloadAction<string>) => {
+    setLocation: (state, action: PayloadAction<Nullable<string>>) => {
       state.location = action.payload
     },
   },
