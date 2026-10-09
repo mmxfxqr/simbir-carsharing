@@ -16,9 +16,12 @@ const orderSlice = createSlice({
     setAddress: (state, action: PayloadAction<string>) => {
       state.address = action.payload
     },
+    setModel: (state, action: PayloadAction<string>) => {
+      state.model = action.payload
+    },
   },
 })
 
-export const { setLocation, setCity, setAddress } = orderSlice.actions
+export const { setLocation, setCity, setAddress, setModel } = orderSlice.actions
 
 export const orderReducer = orderSlice.reducer

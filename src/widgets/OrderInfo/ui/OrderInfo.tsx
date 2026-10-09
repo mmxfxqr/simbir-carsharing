@@ -14,7 +14,7 @@ export const OrderInfo: FC = () => {
   }
 
   return (
-    <div className="flex w-full max-w-71.75 flex-col">
+    <div className="flex w-full max-w-[320px] flex-col border-l border-white pt-8 pl-8">
       <h1 className="text-dark mb-6.5 text-[18px] font-medium">Ваш заказ:</h1>
       <div>
         <OrderInfoItem title="Пункт выдачи" value={location} />
