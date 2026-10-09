@@ -1,34 +1,18 @@
 import { useAppDispatch, useAppSelector } from '@app/store'
 import { selectOrderModel, setModel } from '@entities/Order'
-import { cars } from '@widgets/CarGrid/config/cars'
+import { useFilterCars } from '@widgets/CarGrid/hook/useFilterCars'
 import { CarCard } from '@widgets/CarGrid/ui/CarCard'
 import { FilterCars } from '@widgets/FillerCars'
-import { useMemo, useState, type FC } from 'react'
+import { type FC } from 'react'
 
 export const CarGrid: FC = () => {
-  const [selectedFilterId, setSelectedFilterId] = useState<string>('1')
+  const { filtredCars, handleFilterChange, selectedFilterId } = useFilterCars()
   const selectedModel = useAppSelector(selectOrderModel)
   const dispatch = useAppDispatch()
-  const handleFilterChange = (id: string) => {
-    setSelectedFilterId(id)
-  }
+
   const handleCarCardClick = (brand: string, model: string) => {
     dispatch(setModel(`${brand}, ${model}`))
   }
-
-  const filtredCars = useMemo(
-    () =>
-      cars.filter((car) => {
-        if (selectedFilterId === '1') {
-          return true
-        } else if (selectedFilterId === '2') {
-          return car.category === 'economy'
-        }
-
-        return car.category === 'premium'
-      }),
-    [cars, selectedFilterId],
-  )
 
   return (
     <div>
