@@ -36,7 +36,7 @@ export const SelectLocation: FC = () => {
         label="Пункт выдачи"
         variants={Object.keys(locations[city].addresses || {})}
         onSelect={handleSelecteAdressValue}
-        isDisabled={Boolean(!city)}
+        isDisabled={!city}
       />
     </div>
   )

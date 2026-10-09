@@ -4,7 +4,7 @@ import type { FC } from 'react'
 
 export const LocationPage: FC = () => {
   return (
-    <div className="px-16 pt-8">
+    <div>
       <SelectLocation/>
       <LocationMap />
     </div>
