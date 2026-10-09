@@ -18,7 +18,6 @@ export const useInputSelect = ({ onSelect, variants }: UseInputSelectProps) => {
   }
 
   const handleSelect = (variant: string) => {
-    console.log(variant)
     setValue(variant)
     onSelect(variant)
   }

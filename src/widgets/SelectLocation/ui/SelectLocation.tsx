@@ -1,12 +1,16 @@
 import { useAppDispatch, useAppSelector } from '@app/store'
-import { setAddress, setCity, setLocation } from '@entities/Order'
+import {
+  selectOrderCity,
+  setAddress,
+  setCity,
+  setLocation,
+} from '@entities/Order'
 import { locations } from '@pages/LocationPage/config/location'
 import { InputSelectionMenu } from '@shared/ui/InputSelectMenu'
 import type { FC } from 'react'
 
 export const SelectLocation: FC = () => {
-  const location = useAppSelector((state) => state.order.location)
-  const city = useAppSelector((state) => state.order.city)
+  const city = useAppSelector(selectOrderCity)
 
   const dispatch = useAppDispatch()
 
@@ -15,7 +19,6 @@ export const SelectLocation: FC = () => {
     dispatch(setCity(value))
   }
   const handleSelecteAdressValue = (value: string) => {
-    console.log(value)
     dispatch(setAddress(value))
     dispatch(setLocation(`${city}, ${value}`))
   }
@@ -35,7 +38,6 @@ export const SelectLocation: FC = () => {
         onSelect={handleSelecteAdressValue}
         isDisabled={Boolean(!city)}
       />
-      <h1>{location}</h1>
     </div>
   )
 }

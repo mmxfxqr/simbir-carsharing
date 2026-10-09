@@ -2,9 +2,11 @@ import type { FC } from 'react'
 import { Map, Placemark } from '@pbe/react-yandex-maps'
 import { locations } from '@pages/LocationPage/config/location'
 import { useAppSelector } from '@app/store'
+import { selectOrderAdress, selectOrderCity } from '@entities/Order'
+
 export const LocationMap: FC = () => {
-  const city = useAppSelector((state) => state.order.city)
-  const selectectedAdress = useAppSelector((state) => state.order.address)
+  const city = useAppSelector(selectOrderCity)
+  const selectectedAdress = useAppSelector(selectOrderAdress)
   const adresses = Object.entries(locations[city].addresses)
   const cityData = locations[city]
   const center = selectectedAdress
@@ -27,7 +29,6 @@ export const LocationMap: FC = () => {
             <Placemark
               key={index}
               geometry={coordinates}
-              // properties={{ iconCaption: name }}
               options={{ preset: 'islands#darkGreenCircleIcon' }}
             />
           ))}
