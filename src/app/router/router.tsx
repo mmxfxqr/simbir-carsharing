@@ -1,7 +1,8 @@
 import { AppConfig } from '@app/config/appConfig'
 import { RoutePath } from '@app/config/routePath'
 import { RootLayout } from '@app/layouts/RootLayout'
-import { ModelGuard } from '@app/router/guards/ModelGuard'
+import { ConfigurationGuard, ModelGuard } from '@app/router/guards'
+import { ConfigurationPage } from '@pages/AdditionallyPage'
 import { HomePage } from '@pages/HomePage'
 import { LocationPage } from '@pages/LocationPage'
 import { ModelPage } from '@pages/ModelPage'
@@ -36,6 +37,15 @@ export const router = createBrowserRouter(
                 {
                   path: RoutePath.Model,
                   element: <ModelPage />,
+                },
+              ],
+            },
+            {
+              element: <ConfigurationGuard />,
+              children: [
+                {
+                  path: RoutePath.Configuration,
+                  element: <ConfigurationPage />,
                 },
               ],
             },

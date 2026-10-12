@@ -9,6 +9,6 @@ export interface Car {
 }
 
 export interface CarCardProps extends Car {
-  onCardClick: (brand: string, model: string) => void
+  onCardClick: (brand: string, model: string, cost: string) => void
   isSelected: boolean
 }

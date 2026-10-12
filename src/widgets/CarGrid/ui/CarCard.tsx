@@ -16,7 +16,7 @@ export const CarCard: FC<CarCardProps> = ({
         'hover:border-dark flex h-56 w-92.25 flex-col border border-white p-4',
         isSelected && 'border-primary hover:border-primary',
       )}
-      onClick={() => onCardClick(brand, model)}
+      onClick={() => onCardClick(brand, model, cost)}
     >
       <h1 className="text-dark text-[18px] font-normal">{model}</h1>
       <h1 className="text-gray mb-9 text-[14px] font-normal">{cost}</h1>

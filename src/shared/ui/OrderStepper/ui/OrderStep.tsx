@@ -6,12 +6,10 @@ import { useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import type { OrderStepProps } from '@shared/ui/OrderStepper/types'
 
-
 export const OrderStep: FC<OrderStepProps> = ({ order, isLast }) => {
   const { t } = useTranslation()
   const { pathname } = useLocation()
   const currentStep = getLastPathSegment(pathname)
-  
 
   return (
     <div className="mr-4 flex items-center gap-4">

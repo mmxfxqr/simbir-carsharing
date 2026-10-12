@@ -5,5 +5,6 @@ export interface OrderState {
   address: Nullable<string>
   location: Nullable<string>
   model: Nullable<string>
+  cost: Nullable<string>
   configuration: Nullable<string>
 }

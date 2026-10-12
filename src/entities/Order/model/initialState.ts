@@ -6,5 +6,6 @@ export const initialState: OrderState = {
   address: null,
   location: null,
   model: null,
+  cost: null,
   configuration: null,
 }

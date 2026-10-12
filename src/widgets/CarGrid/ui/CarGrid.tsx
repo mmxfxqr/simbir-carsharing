@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from '@app/store'
-import { selectOrderModel, setModel } from '@entities/Order'
+import { selectOrderModel, setCost, setModel } from '@entities/Order'
 import { useFilterCars } from '@widgets/CarGrid/hook/useFilterCars'
 import { CarCard } from '@widgets/CarGrid/ui/CarCard'
 import { FilterCars } from '@widgets/FillerCars'
@@ -10,8 +10,9 @@ export const CarGrid: FC = () => {
   const selectedModel = useAppSelector(selectOrderModel)
   const dispatch = useAppDispatch()
 
-  const handleCarCardClick = (brand: string, model: string) => {
+  const handleCarCardClick = (brand: string, model: string, cost: string) => {
     dispatch(setModel(`${brand}, ${model}`))
+    dispatch(setCost(cost))
   }
 
   return (
