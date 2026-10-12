@@ -5,13 +5,13 @@ export const ORDER_STEPS = [
   {
     path: RoutePath.Location,
     nextPath: RoutePath.Model,
-    buttonText: 'Выбрать модель',
+    buttonText: 'Choose a model',
     isComplete: ({ location }: OrderStepState) => Boolean(location),
   },
   {
     path: RoutePath.Model,
     nextPath: RoutePath.Configuration,
-    buttonText: 'Дополнительно',
+    buttonText: 'Configuration',
     isComplete: ({ model }: OrderStepState) => Boolean(model),
   },
 ]

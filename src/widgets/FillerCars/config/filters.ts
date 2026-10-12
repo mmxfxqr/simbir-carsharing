@@ -3,14 +3,14 @@ import type { Filter } from '@widgets/FillerCars/types'
 export const filters: Filter[] = [
   {
     id: '1',
-    label: 'Все модели',
+    label: 'All models',
   },
   {
     id: '2',
-    label: 'Эконом',
+    label: 'Economy',
   },
   {
     id: '3',
-    label: 'Премиум',
+    label: 'Premium',
   },
 ]

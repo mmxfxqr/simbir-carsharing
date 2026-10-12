@@ -3,8 +3,10 @@ import { Map, Placemark } from '@pbe/react-yandex-maps'
 import { locations } from '@pages/LocationPage/config/location'
 import { useAppSelector } from '@app/store'
 import { selectOrderAdress, selectOrderCity } from '@entities/Order'
+import { useTranslation } from 'react-i18next'
 
 export const LocationMap: FC = () => {
+  const { t } = useTranslation()
   const city = useAppSelector(selectOrderCity)
   const selectectedAdress = useAppSelector(selectOrderAdress)
   const adresses = Object.entries(locations[city].addresses)
@@ -16,7 +18,7 @@ export const LocationMap: FC = () => {
   return (
     <div>
       <h1 className="text-dark mb-4 text-[14px] font-light">
-        Выбрать на карте:
+        {t('Select on the map:')}
       </h1>
       <div className="h-88 w-184 [&_.ymaps-layers-pane]:grayscale">
         <Map

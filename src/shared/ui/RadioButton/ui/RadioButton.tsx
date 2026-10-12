@@ -1,5 +1,6 @@
 import type { RadioButtonProps } from '@shared/ui/RadioButton/types'
 import type { FC } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export const RadioButton: FC<RadioButtonProps> = ({
   label,
@@ -7,6 +8,8 @@ export const RadioButton: FC<RadioButtonProps> = ({
   checked,
   onChange,
 }) => {
+  const { t } = useTranslation()
+
   return (
     <label
       htmlFor={id}
@@ -20,7 +23,7 @@ export const RadioButton: FC<RadioButtonProps> = ({
         onChange={onChange}
         checked={checked}
       />
-      <span className="text-dark text-[14px] font-light">{label}</span>
+      <span className="text-dark text-[14px] font-light">{t(`${label}`)}</span>
     </label>
   )
 }

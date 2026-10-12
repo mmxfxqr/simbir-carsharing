@@ -17,5 +17,16 @@
   "Location": "Местоположение",
   "Model": "Модель",
   "Configuration": "Дополнительно",
-  "Total": "Итого"
+  "Total": "Итого",
+  "City": "Город",
+  "Pickup point": "Пункт выдачи",
+  "Select on the map:": "Выбрать на карте:",
+  "Your order:": "Ваш заказ:",
+  "cost": "Цена:",
+  "Choose a model": "Выбрать модель",
+  "All models": "Все модели",
+  "Economy": "Эконом",
+  "Premium": "Премиум",
+  "from": "от",
+  "to": "до"
 }

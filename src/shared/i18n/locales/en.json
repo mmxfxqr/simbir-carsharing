@@ -16,5 +16,16 @@
   "Location": "Location",
   "Model": "Model",
   "Configuration": "Configuration",
-  "Total": "Total"
+  "Total": "Total",
+  "City": "City",
+  "Pickup point": "Pickup point",
+  "Select on the map:": "Select on the map:",
+  "Your order:": "Your order:",
+  "cost": "Cost:",
+  "Choose a model": "Choose a model",
+  "All models": "All models",
+  "Economy": "Economy",
+  "Premium": "Premium",
+  "from": "from",
+  "to": "to"
 }

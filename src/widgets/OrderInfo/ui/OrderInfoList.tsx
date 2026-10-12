@@ -1,11 +1,14 @@
 import type { OrderStepState } from '@widgets/OrderInfo/types'
 import { OrderInfoItem } from '@widgets/OrderInfo/ui/OrderInfoItem'
 import type { FC } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export const OrderInfoList: FC<OrderStepState> = ({ location, model }) => {
+  const { t } = useTranslation()
+
   const items = [
-    { title: 'Пункт выдачи', value: location },
-    { title: 'Модель', value: model },
+    { title: t('Pickup point'), value: location },
+    { title: t('Model'), value: model },
   ]
 
   return (
