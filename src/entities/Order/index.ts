@@ -5,6 +5,7 @@ export {
   setAddress,
   setModel,
   setCost,
+  clearModel,
 } from './model/orderSlice'
 export {
   selectOrderAdress,

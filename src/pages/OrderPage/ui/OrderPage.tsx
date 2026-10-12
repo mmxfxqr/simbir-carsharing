@@ -9,7 +9,7 @@ export const OrderPage: FC = () => {
     <div>
       <Header isInnerPage />
       <OrderStepper />
-      <div className="flex justify-between px-16">
+      <div className="flex justify-between px-16 max-sm:p-2">
         <Outlet />
         <OrderInfo />
       </div>

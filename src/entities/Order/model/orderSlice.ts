@@ -22,10 +22,20 @@ const orderSlice = createSlice({
     setCost: (state, action: PayloadAction<Nullable<string>>) => {
       state.cost = action.payload
     },
+    clearModel: (state) => {
+      state.cost = null
+      state.model = null
+    },
   },
 })
 
-export const { setLocation, setCity, setAddress, setModel, setCost } =
-  orderSlice.actions
+export const {
+  setLocation,
+  setCity,
+  setAddress,
+  setModel,
+  setCost,
+  clearModel,
+} = orderSlice.actions
 
 export const orderReducer = orderSlice.reducer

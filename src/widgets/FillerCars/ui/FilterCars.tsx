@@ -8,9 +8,10 @@ export const FilterCars: FC<FilterCarsProps> = ({
   onFilterChange,
 }) => {
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 max-sm:flex-col">
       {filters.map((filter) => (
         <RadioButton
+          key={filter.id}
           {...filter}
           checked={selectedFilterId === filter.id}
           onChange={() => onFilterChange(filter.id)}

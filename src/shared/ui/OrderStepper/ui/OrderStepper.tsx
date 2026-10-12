@@ -4,7 +4,7 @@ import { OrderStep } from '@shared/ui/OrderStepper/ui/OrderStep'
 
 export const OrderStepper: FC = () => {
   return (
-    <div className="flex border-y border-[#EEE] py-2 pl-16">
+    <div className="flex border-y border-[#EEE] py-2 pl-16 max-sm:p-2">
       {orderSteps.map((order, index) => (
         <OrderStep
           key={order}

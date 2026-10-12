@@ -1,5 +1,6 @@
 import { useAppDispatch, useAppSelector } from '@app/store'
 import {
+  clearModel,
   selectOrderCity,
   setAddress,
   setCity,
@@ -16,10 +17,12 @@ export const SelectLocation: FC = () => {
   const dispatch = useAppDispatch()
 
   const handleSelectCityValue = (value: string) => {
+    dispatch(clearModel())
     dispatch(setLocation(null))
     dispatch(setCity(value))
   }
   const handleSelecteAdressValue = (value: string) => {
+    dispatch(clearModel())
     dispatch(setAddress(value))
     dispatch(setLocation(`${city}, ${value}`))
   }

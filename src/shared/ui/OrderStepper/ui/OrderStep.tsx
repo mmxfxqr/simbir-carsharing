@@ -12,10 +12,10 @@ export const OrderStep: FC<OrderStepProps> = ({ order, isLast }) => {
   const currentStep = getLastPathSegment(pathname)
 
   return (
-    <div className="mr-4 flex items-center gap-4">
+    <div className="mr-4 flex items-center gap-4 max-sm:mr-2 max-sm:gap-2">
       <h1
         className={clsx(
-          'text-sm font-bold',
+          'text-sm font-bold max-sm:text-xs',
           currentStep === order.toLowerCase() ? 'text-primary' : 'text-gray',
         )}
       >

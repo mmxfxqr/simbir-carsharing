@@ -31,9 +31,11 @@ export const InputSelectionMenu: FC<SelectProps> = ({
         classname,
       )}
     >
-      <h1 className="mr-4 flex w-24 shrink-0 justify-end">{label}</h1>
+      <h1 className="mr-4 flex w-24 shrink-0 justify-end max-sm:w-12">
+        {label}
+      </h1>
 
-      <div className="relative w-56">
+      <div className="relative w-56 max-lg:max-w-30">
         <InputSelectionField
           inputRef={inputRef}
           label={label}
