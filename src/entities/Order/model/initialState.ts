@@ -5,7 +5,7 @@ export const initialState: OrderState = {
   city: Object.keys(locations)[0],
   address: null,
   location: null,
-  model: null,
+  car: null,
   cost: null,
   configuration: null,
 }

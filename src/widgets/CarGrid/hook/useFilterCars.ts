@@ -1,4 +1,4 @@
-import { cars } from '@widgets/CarGrid/config/cars'
+import { cars } from '@entities/Car'
 import { useMemo, useState } from 'react'
 
 export const useFilterCars = () => {

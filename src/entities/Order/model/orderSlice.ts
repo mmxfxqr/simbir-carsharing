@@ -1,3 +1,4 @@
+import type { Car } from '@entities/Car/types'
 import { initialState } from './initialState'
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import type { Nullable } from '@shared/types'
@@ -16,15 +17,14 @@ const orderSlice = createSlice({
     setAddress: (state, action: PayloadAction<Nullable<string>>) => {
       state.address = action.payload
     },
-    setModel: (state, action: PayloadAction<Nullable<string>>) => {
-      state.model = action.payload
+    setCar: (state, action: PayloadAction<Nullable<Car>>) => {
+      state.car = action.payload
     },
     setCost: (state, action: PayloadAction<Nullable<string>>) => {
       state.cost = action.payload
     },
-    clearModel: (state) => {
-      state.cost = null
-      state.model = null
+    clearCar: (state) => {
+      state.car = null
     },
   },
 })
@@ -33,9 +33,9 @@ export const {
   setLocation,
   setCity,
   setAddress,
-  setModel,
+  setCar,
   setCost,
-  clearModel,
+  clearCar,
 } = orderSlice.actions
 
 export const orderReducer = orderSlice.reducer

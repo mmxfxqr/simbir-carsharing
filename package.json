@@ -19,6 +19,7 @@
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-i18next": "^17.0.15",
+    "react-imask": "^7.6.1",
     "react-redux": "^9.3.0",
     "react-router-dom": "^7.18.4",
     "tailwind-merge": "^3.7.0",

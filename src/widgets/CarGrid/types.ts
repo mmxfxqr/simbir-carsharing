@@ -1,14 +1,6 @@
-type CategotyCarByCost = 'economy' | 'premium'
-
-export interface Car {
-  image: string
-  brand: string
-  model: string
-  cost: string
-  category: CategotyCarByCost
-}
+import type { Car } from "@entities/Car/types"
 
 export interface CarCardProps extends Car {
-  onCardClick: (brand: string, model: string, cost: string) => void
+  onCardClick: (car: Car) => void
   isSelected: boolean
 }

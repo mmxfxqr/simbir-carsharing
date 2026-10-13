@@ -1,9 +1,9 @@
 import { useInputSelect } from '@shared/ui/InputSelectMenu/hook/useInputSelect'
 import type { SelectProps } from '../types'
-import { InputSelectionField } from './InputSelectionField'
 import clsx from 'clsx'
 import type { FC } from 'react'
 import { DropDown } from '@shared/ui/InputSelectMenu/ui/DropDown'
+import { Input } from '@shared/ui/Input/ui/Input'
 
 export const InputSelectionMenu: FC<SelectProps> = ({
   label,
@@ -31,12 +31,12 @@ export const InputSelectionMenu: FC<SelectProps> = ({
         classname,
       )}
     >
-      <h1 className="mr-4 flex w-24 shrink-0 justify-end max-sm:w-12">
+      <h1 className="mr-4 flex w-[18px] shrink-0 justify-end max-sm:w-12">
         {label}
       </h1>
 
       <div className="relative w-56 max-lg:max-w-30">
-        <InputSelectionField
+        <Input
           inputRef={inputRef}
           label={label}
           onClearClick={handleClearClick}

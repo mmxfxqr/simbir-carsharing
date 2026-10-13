@@ -2,7 +2,7 @@ import { useAppSelector } from '@app/store'
 import {
   selectOrderCost,
   selectOrderLocation,
-  selectOrderModel,
+  selectOrderCar,
 } from '@entities/Order'
 import { getLastPathSegment } from '@shared/lib/getLastPathSegment'
 import { ORDER_STEPS } from '@widgets/OrderInfo/config/orderSteps'
@@ -11,7 +11,8 @@ import { useLocation, useNavigate } from 'react-router-dom'
 export const useOrderInfo = () => {
   const navigate = useNavigate()
   const location = useAppSelector(selectOrderLocation)
-  const model = useAppSelector(selectOrderModel)
+  const car = useAppSelector(selectOrderCar)
+  const model = car ? `${car.brand}, ${car.model}` : null
   const orderState = { location, model }
   const cost = useAppSelector(selectOrderCost)
   const { pathname } = useLocation()

@@ -7,16 +7,20 @@ export const CarCard: FC<CarCardProps> = ({
   image,
   model,
   brand,
+  category,
+  config,
   onCardClick,
   isSelected,
 }) => {
   return (
     <div
       className={twMerge(
-        'hover:border-dark flex h-56 w-full min-w-0 flex-col border border-white p-4 max-lg:max-w-64 max-sm:max-w-56',
+        'hover:border-dark flex h-56 w-92.25 min-w-0 flex-col border border-white p-4 max-lg:max-w-64 max-sm:w-auto max-sm:max-w-56',
         isSelected && 'border-primary hover:border-primary',
       )}
-      onClick={() => onCardClick(brand, model, cost)}
+      onClick={() =>
+        onCardClick({ brand, category, config, cost, image, model })
+      }
     >
       <h1 className="text-dark text-[18px] font-normal">{model}</h1>
       <h1 className="text-gray mb-9 text-[14px] font-normal">{cost}</h1>

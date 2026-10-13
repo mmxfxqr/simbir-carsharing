@@ -3,14 +3,14 @@ export {
   setLocation,
   setCity,
   setAddress,
-  setModel,
+  setCar,
   setCost,
-  clearModel,
+  clearCar,
 } from './model/orderSlice'
 export {
   selectOrderAdress,
   selectOrderCity,
   selectOrderLocation,
-  selectOrderModel,
+  selectOrderCar,
   selectOrderCost,
 } from './model/selectors'
