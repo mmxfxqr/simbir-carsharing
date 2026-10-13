@@ -1,9 +1,11 @@
 import type { RadioButtonProps } from '@shared/ui/RadioButton/types'
 import type { FC } from 'react'
 import { useTranslation } from 'react-i18next'
+import { twMerge } from 'tailwind-merge'
 
 export const RadioButton: FC<RadioButtonProps> = ({
   label,
+  name,
   id,
   checked,
   onChange,
@@ -18,12 +20,19 @@ export const RadioButton: FC<RadioButtonProps> = ({
       <input
         className="border-gray checked:border-primary size-3 h-3 w-3 appearance-none rounded-full border-2 checked:border-[3px]"
         type="radio"
-        name="flexRadioDefault"
+        name={name}
         id={id}
         onChange={onChange}
         checked={checked}
       />
-      <span className="text-dark text-[14px] font-light">{t(`${label}`)}</span>
+      <span
+        className={twMerge(
+          'text-gray text-[14px] font-light',
+          checked && 'text-dark',
+        )}
+      >
+        {t(`${label}`)}
+      </span>
     </label>
   )
 }
