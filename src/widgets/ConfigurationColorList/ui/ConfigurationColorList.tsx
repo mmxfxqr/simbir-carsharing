@@ -1,14 +1,15 @@
 import { RadioButton } from '@shared/ui/RadioButton'
+import { useConfigurationColorList } from '@widgets/ConfigurationColorList/hooks/useConfigurationColorList'
 import type { ConfigurationColorListProps } from '@widgets/ConfigurationColorList/types'
-import { useState, type FC } from 'react'
+import type { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export const ConfigurationColorList: FC<ConfigurationColorListProps> = ({
   colors,
 }) => {
   const { t } = useTranslation()
-  const [selectedFilter, setSelectedFilter] = useState<string>('')
-  const colorOptions = [t('Any'), ...colors.map((color) => color.name)]
+  const { colorOptions, handleRadioClick, selectedFilter } =
+    useConfigurationColorList(t, colors)
 
   return (
     <div>
@@ -20,7 +21,7 @@ export const ConfigurationColorList: FC<ConfigurationColorListProps> = ({
             label={color}
             name="color"
             checked={selectedFilter === color}
-            onChange={() => setSelectedFilter(color)}
+            onChange={() => handleRadioClick(color)}
           />
         ))}
       </div>

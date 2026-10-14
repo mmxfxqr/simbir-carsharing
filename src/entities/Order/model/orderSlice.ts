@@ -2,6 +2,7 @@ import type { Car } from '@entities/Car/types'
 import { initialState } from './initialState'
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import type { Nullable } from '@shared/types'
+import type { RateType } from '@widgets/ConfigurationRatePick/types'
 
 const orderSlice = createSlice({
   name: 'order',
@@ -20,11 +21,58 @@ const orderSlice = createSlice({
     setCar: (state, action: PayloadAction<Nullable<Car>>) => {
       state.car = action.payload
     },
-    setCost: (state, action: PayloadAction<Nullable<string>>) => {
+    setCost: (state, action: PayloadAction<Nullable<number>>) => {
       state.cost = action.payload
+    },
+    setColorCost: (state, action: PayloadAction<Nullable<number>>) => {
+      state.colorCost = action.payload
+    },
+    setRentDurationCost: (state, action: PayloadAction<Nullable<number>>) => {
+      state.rentDurationCost = action.payload
+    },
+    setSelectedServicesCost: (
+      state,
+      action: PayloadAction<Nullable<number>>,
+    ) => {
+      state.selectedServicesCost = action.payload
+    },
+    setCostRange: (state, action: PayloadAction<Nullable<string>>) => {
+      state.costRange = action.payload
+    },
+    setSelectedColor: (state, action: PayloadAction<Nullable<string>>) => {
+      state.selectedColor = action.payload
+    },
+    setRentDuration: (state, action: PayloadAction<Nullable<string>>) => {
+      state.rentDuration = action.payload
+    },
+    setRentDurationMinutes: (
+      state,
+      action: PayloadAction<Nullable<number>>,
+    ) => {
+      state.rentDurationMinutes = action.payload
+    },
+    setSelectedRate: (state, action: PayloadAction<Nullable<RateType>>) => {
+      state.selectedRate = action.payload
+    },
+    setAdditionalServices: (
+      state,
+      action: PayloadAction<Nullable<string[]>>,
+    ) => {
+      state.additionalServices = action.payload
     },
     clearCar: (state) => {
       state.car = null
+    },
+    clearConfiguration: (state) => {
+      state.cost = null
+      state.colorCost = null
+      state.rentDurationCost = null
+      state.selectedServicesCost = null
+      state.rentDuration = null
+      state.rentDurationMinutes = null
+      state.selectedColor = null
+      state.selectedRate = null
+      state.additionalServices = null
     },
   },
 })
@@ -35,7 +83,17 @@ export const {
   setAddress,
   setCar,
   setCost,
+  setColorCost,
+  setRentDurationCost,
+  setSelectedServicesCost,
+  setCostRange,
+  setRentDuration,
+  setRentDurationMinutes,
+  setSelectedColor,
+  setSelectedRate,
+  setAdditionalServices,
   clearCar,
+  clearConfiguration,
 } = orderSlice.actions
 
 export const orderReducer = orderSlice.reducer

@@ -39,12 +39,14 @@
   "toDate": "to",
   "Enter the date and time": "Enter the date and time",
   "Rate": "Rate",
-  "By the minute": "By the minute",
+  "perMinute": "perMinute",
   "₽/minute": "₽/minute",
   "₽/day": "₽/day",
-  "For a day": "For a day",
+  "perDay": "perDay",
   "Additional services": "Additional services",
   "Full tank": "Full tank",
   "Child seat": "Child seat",
-  "Right-hand drive": "Right-hand drive"
+  "Right-hand drive": "Right-hand drive",
+  "Rental duration": "Rental duration",
+  "Yes": "Yes"
 }

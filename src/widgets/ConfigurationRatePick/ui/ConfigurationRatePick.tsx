@@ -1,17 +1,55 @@
+import { useAppDispatch, useAppSelector } from '@app/store'
+import {
+  selectOrderCost,
+  selectOrderRentDurationCost,
+  selectOrderRentDurationMinutes,
+  setCost,
+  setRentDurationCost,
+  setSelectedRate,
+} from '@entities/Order'
+import type { Nullable } from '@shared/types'
 import { RadioButton } from '@shared/ui/RadioButton'
 import type {
   ConfigurationRatePickProps,
   RateType,
 } from '@widgets/ConfigurationRatePick/types'
-import { useState, type FC } from 'react'
+import { useEffect, useState, type FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export const ConfigurationRatePick: FC<ConfigurationRatePickProps> = ({
   tariffs,
 }) => {
   const { t } = useTranslation()
-  const [selectedTariff, setSelectedTariff] = useState<RateType>('perMinute')
+  const cost = useAppSelector(selectOrderCost)
+  const rentCost = useAppSelector(selectOrderRentDurationCost)
+  const rentDurationMinutes = useAppSelector(selectOrderRentDurationMinutes)
+  const dispatch = useAppDispatch()
+  const [selectedTariff, setSelectedTariff] = useState<Nullable<RateType>>(null)
   const tariffsArr = Object.entries(tariffs)
+
+  useEffect(() => {
+    if (
+      rentDurationMinutes == null ||
+      rentDurationMinutes <= 0 ||
+      selectedTariff == null ||
+      cost == null
+    ) {
+      return
+    }
+
+    const newRentCost =
+      selectedTariff === 'perMinute'
+        ? rentDurationMinutes * tariffs.perMinute
+        : Math.ceil(rentDurationMinutes / 1440) * tariffs.perDay
+
+    dispatch(setCost(cost - (rentCost ?? 0) + newRentCost))
+    dispatch(setRentDurationCost(newRentCost))
+  }, [selectedTariff, rentDurationMinutes, cost, rentCost, tariffs, dispatch])
+
+  const handleRadioClick = (name: RateType) => {
+    setSelectedTariff(name)
+    dispatch(setSelectedRate(name))
+  }
 
   return (
     <div>
@@ -24,12 +62,12 @@ export const ConfigurationRatePick: FC<ConfigurationRatePickProps> = ({
             name="tariff"
             label={
               name === 'perMinute'
-                ? `${t('By the minute')}, ${price} ${t('₽/minute')}`
-                : `${t('For a day')}, ${price} ${t('₽/day')}`
+                ? `${t('perMinute')}, ${price} ${t('₽/minute')}`
+                : `${t('perDay')}, ${price} ${t('₽/day')}`
             }
 
             checked={selectedTariff === name}
-            onChange={() => setSelectedTariff(name as RateType)}
+            onChange={() => handleRadioClick(name as RateType)}
           />
         ))}
       </div>

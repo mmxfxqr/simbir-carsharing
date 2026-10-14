@@ -1,11 +1,12 @@
 import { Input } from '@shared/ui/Input/ui/Input'
-import { useState, type FC } from 'react'
+import { useConfigurationRatePick } from '@widgets/ConfigurationRatePick/hooks/useConfigurationRatePick'
+import type { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export const ConfigurationDatePick: FC = () => {
   const { t } = useTranslation()
-  const [fromDate, setFromDate] = useState<string>('')
-  const [toDate, setToDate] = useState<string>('')
+  const { fromDate, setFromDate, setToDate, toDate } =
+    useConfigurationRatePick()
 
   return (
     <div>
