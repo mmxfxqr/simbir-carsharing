@@ -1,10 +1,12 @@
 import { CheckboxWithLabel } from '@shared/ui/CheckboxWithLabel'
 import type { ConfigurationAdditionalServicesProps } from '@widgets/ConfigurationAdditionalServices/types'
 import { useState, type FC } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export const ConfigurationAdditionalServices: FC<
   ConfigurationAdditionalServicesProps
 > = ({ additionalServices }) => {
+  const { t } = useTranslation()
   const { childSeat, fullTank, rightHandDrive } = additionalServices
 
   const [selectedServices, setSelectedServices] = useState<string[]>([])
@@ -29,7 +31,7 @@ export const ConfigurationAdditionalServices: FC<
         {services.map((service) => (
           <CheckboxWithLabel
             key={service.name}
-            label={`${service.name}, ${service.cost}₽`}
+            label={`${t(service.name)}, ${service.cost} ₽`}
             checked={selectedServices.includes(service.name)}
             onChange={(checked) => handleServiceChange(service.name, checked)}
           />

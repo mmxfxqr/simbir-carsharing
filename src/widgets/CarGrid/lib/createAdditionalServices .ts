@@ -1,4 +1,4 @@
-import type { CarConfig } from '@widgets/CarGrid/types'
+import type { CarConfig } from '@entities/Car/types'
 
 export const createAdditionalServices = (
   fullTankCost: number,
@@ -6,17 +6,17 @@ export const createAdditionalServices = (
   rightHandDriveCost: number,
 ): CarConfig['additionalServices'] => ({
   fullTank: {
-    name: 'Полный бак',
+    name: 'Full tank',
     cost: fullTankCost,
     available: true,
   },
   childSeat: {
-    name: 'Детское кресло',
+    name: 'Child seat',
     cost: childSeatCost,
     available: true,
   },
   rightHandDrive: {
-    name: 'Правый руль',
+    name: 'Right-hand drive',
     cost: rightHandDriveCost,
     available: true,
   },
