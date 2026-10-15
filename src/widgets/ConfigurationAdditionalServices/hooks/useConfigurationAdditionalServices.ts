@@ -1,54 +1,55 @@
 import { useAppDispatch, useAppSelector } from '@app/store'
 import {
-  selectOrderCost,
-  selectOrderSelectedServicesCost,
+  selectOrderAdditionalServices,
   setAdditionalServices,
-  setCost,
   setSelectedServicesCost,
 } from '@entities/Order'
 import type { ConfigurationAdditionalServicesProps } from '@widgets/ConfigurationAdditionalServices/types'
-import { useEffect, useMemo, useState } from 'react'
 
 export const useConfigurationAdditionalServices = ({
   additionalServices,
 }: ConfigurationAdditionalServicesProps) => {
   const dispatch = useAppDispatch()
-  const cost = useAppSelector(selectOrderCost)
-  const additionalCostState = useAppSelector(selectOrderSelectedServicesCost)
+  const selectedAditionalServices = useAppSelector(
+    selectOrderAdditionalServices,
+  )
   const { childSeat, fullTank, rightHandDrive } = additionalServices
 
   const services = [fullTank, childSeat, rightHandDrive]
 
-  const [selectedServices, setSelectedServices] = useState<string[]>([])
-
-  const selectedServicesCost = useMemo(() => {
-    return services.reduce((total, service) => {
-      return selectedServices.includes(service.name)
-        ? total + service.cost
-        : total
-    }, 0)
-  }, [selectedServices, additionalServices])
-
-  useEffect(() => {
-    if (!cost) return
-    dispatch(setAdditionalServices(selectedServices))
-    dispatch(setCost(cost - (additionalCostState ?? 0) + selectedServicesCost))
-    dispatch(setSelectedServicesCost(selectedServicesCost))
-  }, [dispatch, selectedServices, selectedServicesCost])
+  const calculateServicesCost = (
+    selectedServices: string[],
+    services: { name: string; cost: number }[],
+  ) => {
+    return services.reduce(
+      (total, service) =>
+        selectedServices.includes(service.name) ? total + service.cost : total,
+      0,
+    )
+  }
 
   const handleServiceChange = (name: string, checked: boolean) => {
-    setSelectedServices((prev) => {
-      if (checked) {
-        return prev.includes(name) ? prev : [...prev, name]
-      }
+    const currentServices = selectedAditionalServices ?? []
+    let nextSevices
+    if (checked) {
+      nextSevices = currentServices.includes(name)
+        ? currentServices
+        : [...currentServices, name]
+    } else {
+      nextSevices = currentServices.filter(
+        (serviceName) => serviceName !== name,
+      )
+    }
 
-      return prev.filter((serviceName) => serviceName !== name)
-    })
+    const nextCost = calculateServicesCost(nextSevices, services)
+
+    dispatch(setAdditionalServices(nextSevices))
+    dispatch(setSelectedServicesCost(nextCost))
   }
 
   return {
     services,
     handleServiceChange,
-    selectedServices,
+    selectedAditionalServices,
   }
 }

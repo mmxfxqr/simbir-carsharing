@@ -10,7 +10,7 @@ export const initialState: OrderState = {
   rentDuration: null,
   rentDurationMinutes: null,
   selectedRate: null,
-  additionalServices: null,
+  selectedAdditionalServices: null,
   cost: null,
   colorCost: null,
   selectedServicesCost: null,

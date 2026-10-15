@@ -1,8 +1,10 @@
+import type { FilterId } from '@widgets/CarGrid/types'
+
 export interface FilterCarsProps {
-  selectedFilterId: string
-  onFilterChange: (id: string) => void
+  selectedFilterId: FilterId
+  onFilterChange: (id: FilterId) => void
 }
 export interface Filter {
-  id: string
+  id: FilterId
   label: string
 }

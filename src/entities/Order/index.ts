@@ -28,8 +28,9 @@ export {
   selectOrderSelectedServicesCost,
   selectOrderCostRange,
   selectOrderColor,
-  selectOrderRent,
+  selectOrderSelectedRate,
   selectOrderRentDuration,
   selectOrderRentDurationMinutes,
   selectOrderAdditionalServices,
+  selectOrderTotalCost,
 } from './model/selectors'

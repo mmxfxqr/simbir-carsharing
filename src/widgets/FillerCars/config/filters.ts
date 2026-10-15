@@ -1,16 +1,17 @@
+import { FilterId } from '@widgets/CarGrid/types'
 import type { Filter } from '@widgets/FillerCars/types'
 
 export const filters: Filter[] = [
   {
-    id: '1',
+    id: FilterId.All,
     label: 'All models',
   },
   {
-    id: '2',
+    id: FilterId.Economy,
     label: 'Economy',
   },
   {
-    id: '3',
+    id: FilterId.Premium,
     label: 'Premium',
   },
 ]

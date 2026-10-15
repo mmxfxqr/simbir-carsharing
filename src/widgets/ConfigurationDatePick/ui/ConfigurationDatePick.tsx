@@ -1,12 +1,18 @@
 import { Input } from '@shared/ui/Input/ui/Input'
-import { useConfigurationRatePick } from '@widgets/ConfigurationRatePick/hooks/useConfigurationRatePick'
+import { useConfigurationDatePick } from '@widgets/ConfigurationDatePick/hooks/useConfigurationDatePick'
 import type { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export const ConfigurationDatePick: FC = () => {
   const { t } = useTranslation()
-  const { fromDate, setFromDate, setToDate, toDate } =
-    useConfigurationRatePick()
+  const {
+    fromDate,
+    toDate,
+    handleSetFromDate,
+    handleSetToDate,
+    handleClearFromDate,
+    handleClearToDate,
+  } = useConfigurationDatePick()
 
   return (
     <div>
@@ -20,8 +26,8 @@ export const ConfigurationDatePick: FC = () => {
           isLabeled
           placeholder={t('Enter the date and time')}
           value={fromDate}
-          onAccept={setFromDate}
-          onClearClick={() => setFromDate('')}
+          onAccept={handleSetFromDate}
+          onClearClick={handleClearFromDate}
         />
 
         <Input
@@ -30,8 +36,8 @@ export const ConfigurationDatePick: FC = () => {
           isLabeled
           value={toDate}
           placeholder={t('Enter the date and time')}
-          onAccept={setToDate}
-          onClearClick={() => setToDate('')}
+          onAccept={handleSetToDate}
+          onClearClick={handleClearToDate}
         />
       </div>
     </div>

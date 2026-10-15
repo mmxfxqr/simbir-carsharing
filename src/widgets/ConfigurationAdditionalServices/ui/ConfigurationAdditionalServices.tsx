@@ -8,7 +8,7 @@ export const ConfigurationAdditionalServices: FC<
   ConfigurationAdditionalServicesProps
 > = ({ additionalServices }) => {
   const { t } = useTranslation()
-  const { handleServiceChange, services, selectedServices } =
+  const { handleServiceChange, services, selectedAditionalServices } =
     useConfigurationAdditionalServices({ additionalServices })
 
   return (
@@ -20,7 +20,7 @@ export const ConfigurationAdditionalServices: FC<
           <CheckboxWithLabel
             key={service.name}
             label={`${t(service.name)}, ${service.cost} ₽`}
-            checked={selectedServices.includes(service.name)}
+            checked={selectedAditionalServices?.includes(service.name) || false}
             onChange={(checked) => handleServiceChange(service.name, checked)}
           />
         ))}

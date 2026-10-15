@@ -25,7 +25,7 @@ export const router = createBrowserRouter(
           children: [
             {
               index: true,
-              element: <Navigate to={'location'} replace />,
+              element: <Navigate to={RoutePath.Location} replace />,
             },
             {
               path: RoutePath.Location,

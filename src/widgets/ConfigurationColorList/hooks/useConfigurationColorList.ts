@@ -16,6 +16,7 @@ export const useConfigurationColorList = (t: TFunction, colors: CarColor[]) => {
   const colorCost = useAppSelector(selectOrderColorCost)
   const [selectedFilter, setSelectedFilter] = useState<string>('')
   const colorOptions = [t('Any'), ...colors.map((color) => color.name)]
+  
   const handleRadioClick = (color: string) => {
     setSelectedFilter(color)
     dispatch(setSelectedColor(color))

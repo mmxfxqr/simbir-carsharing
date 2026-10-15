@@ -58,7 +58,7 @@ const orderSlice = createSlice({
       state,
       action: PayloadAction<Nullable<string[]>>,
     ) => {
-      state.additionalServices = action.payload
+      state.selectedAdditionalServices = action.payload
     },
     clearCar: (state) => {
       state.car = null
@@ -72,7 +72,7 @@ const orderSlice = createSlice({
       state.rentDurationMinutes = null
       state.selectedColor = null
       state.selectedRate = null
-      state.additionalServices = null
+      state.selectedAdditionalServices = null
     },
   },
 })

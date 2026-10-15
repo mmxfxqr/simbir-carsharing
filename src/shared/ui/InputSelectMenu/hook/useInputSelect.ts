@@ -2,8 +2,8 @@ import type { UseInputSelectProps } from '../types'
 import { useRef, useState } from 'react'
 
 export const useInputSelect = ({ onSelect, variants }: UseInputSelectProps) => {
-  const [value, setValue] = useState('')
-  const [isFocused, setIsFocused] = useState(false)
+  const [value, setValue] = useState<string>('')
+  const [isFocused, setIsFocused] = useState<boolean>(false)
   const inputRef = useRef<HTMLInputElement>(null)
 
   const filteredVariants = variants?.filter((variant) =>

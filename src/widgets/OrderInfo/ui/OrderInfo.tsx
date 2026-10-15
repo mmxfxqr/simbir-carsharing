@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next'
 
 export const OrderInfo: FC = () => {
   const { t } = useTranslation()
-  const { cost, costRange, currentStep, handleNextStepClick, orderState } =
+  const { totalCost, costRange, currentStep, handleNextStepClick, orderState } =
     useOrderInfo()
 
   return (
@@ -26,7 +26,7 @@ export const OrderInfo: FC = () => {
           selectedAdditionalServices={orderState.selectedAdditionalServices}
         />
 
-        {costRange && <OrderCost cost={cost ? cost : costRange} />}
+        {costRange && <OrderCost cost={totalCost ? totalCost : costRange} />}
         <Button
           className="max-xl: mx-auto w-full max-xl:max-w-36 max-xl:text-[14px]"
           disabled={!currentStep?.isComplete(orderState)}

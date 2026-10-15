@@ -17,6 +17,7 @@ export const ConfigurationPage: FC = () => {
   const costRange = useAppSelector(selectOrderCostRange)
   const startValue = convertRangeToMinValue(costRange)
   const dispatch = useAppDispatch()
+
   useEffect(() => {
     if (startValue) dispatch(setCost(startValue))
 
@@ -24,16 +25,17 @@ export const ConfigurationPage: FC = () => {
       dispatch(clearConfiguration())
     }
   }, [])
-  if (car) {
-    return (
-      <div className="flex flex-col gap-8 pt-8">
-        <ConfigurationColorList colors={car.config.colors} />
-        <ConfigurationDatePick />
-        <ConfigurationRatePick tariffs={car.config.tariffs} />
-        <ConfigurationAdditionalServices
-          additionalServices={car.config.additionalServices}
-        />
-      </div>
-    )
-  }
+
+  if (!car) return null
+
+  return (
+    <div className="flex flex-col gap-8 pt-8">
+      <ConfigurationColorList colors={car.config.colors} />
+      <ConfigurationDatePick />
+      <ConfigurationRatePick tariffs={car.config.tariffs} />
+      <ConfigurationAdditionalServices
+        additionalServices={car.config.additionalServices}
+      />
+    </div>
+  )
 }

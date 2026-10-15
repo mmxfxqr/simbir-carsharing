@@ -1,12 +1,12 @@
 import { useAppSelector } from '@app/store'
 import {
-  selectOrderCost,
+  selectOrderTotalCost,
   selectOrderLocation,
   selectOrderCar,
   selectOrderRentDuration,
   selectOrderColor,
   selectOrderCostRange,
-  selectOrderRent,
+  selectOrderSelectedRate,
   selectOrderAdditionalServices,
 } from '@entities/Order'
 
@@ -23,10 +23,13 @@ export const useOrderInfo = () => {
   const car = useAppSelector(selectOrderCar)
   const color = useAppSelector(selectOrderColor)
   const rentDuration = useAppSelector(selectOrderRentDuration)
-  const selectedRate = useAppSelector(selectOrderRent)
+  const selectedRate = useAppSelector(selectOrderSelectedRate)
   const selectedAdditionalServices = useAppSelector(
     selectOrderAdditionalServices,
   )
+  const totalCost = useAppSelector(selectOrderTotalCost)
+  const costRange = useAppSelector(selectOrderCostRange)
+  
   const model = car ? `${car.brand}, ${car.model}` : null
 
   const orderState = {
@@ -37,9 +40,6 @@ export const useOrderInfo = () => {
     selectedRate,
     selectedAdditionalServices,
   }
-
-  const cost = useAppSelector(selectOrderCost)
-  const costRange = useAppSelector(selectOrderCostRange)
 
   const currentStep = ORDER_STEPS.find(
     (step) => getLastPathSegment(step.path) === currentPath,
@@ -52,7 +52,7 @@ export const useOrderInfo = () => {
 
   return {
     orderState,
-    cost,
+    totalCost,
     costRange,
     handleNextStepClick,
     currentStep,

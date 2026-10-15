@@ -11,7 +11,7 @@ export interface OrderState {
   rentDuration: Nullable<string>
   rentDurationMinutes: Nullable<number>
   selectedRate: Nullable<RateType>
-  additionalServices: Nullable<string[]>
+  selectedAdditionalServices: Nullable<string[]>
   cost: Nullable<number>
   colorCost: Nullable<number>
   selectedServicesCost: Nullable<number>
