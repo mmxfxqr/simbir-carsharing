@@ -1,9 +1,6 @@
 import { RadioButton } from '@shared/ui/RadioButton'
-import { useConfigurationRatePick } from '@widgets/ConfigurationRatePick/hooks/useConfigurationRatePick'
-import {
-  RateType,
-  type ConfigurationRatePickProps,
-} from '@widgets/ConfigurationRatePick/types'
+import { useConfigurationRatePick } from '../hooks/useConfigurationRatePick'
+import { RateType, type ConfigurationRatePickProps } from '../types'
 import type { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 

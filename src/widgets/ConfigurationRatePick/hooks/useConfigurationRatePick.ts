@@ -1,9 +1,6 @@
 import { useAppDispatch, useAppSelector } from '@app/store'
 import { selectOrderSelectedRate, setSelectedRate } from '@entities/Order'
-import {
-  RateType,
-  type ConfigurationRatePickProps,
-} from '@widgets/ConfigurationRatePick/types'
+import { RateType, type ConfigurationRatePickProps } from '../types'
 
 export const useConfigurationRatePick = ({
   tariffs,

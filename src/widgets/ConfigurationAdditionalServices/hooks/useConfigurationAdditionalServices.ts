@@ -4,7 +4,7 @@ import {
   setAdditionalServices,
   setSelectedServicesCost,
 } from '@entities/Order'
-import type { ConfigurationAdditionalServicesProps } from '@widgets/ConfigurationAdditionalServices/types'
+import type { ConfigurationAdditionalServicesProps } from '../types'
 
 export const useConfigurationAdditionalServices = ({
   additionalServices,

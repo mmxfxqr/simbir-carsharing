@@ -1,9 +1,9 @@
 import { Button } from '@shared/ui/Button'
-import { OrderCost } from '@widgets/OrderInfo/ui/OrderCost'
+import { OrderCost } from './OrderCost'
 import type { FC } from 'react'
 
-import { OrderInfoList } from '@widgets/OrderInfo/ui/OrderInfoList'
-import { useOrderInfo } from '@widgets/OrderInfo/hooks/useOrderInfo'
+import { OrderInfoList } from './OrderInfoList'
+import { useOrderInfo } from '../hooks/useOrderInfo'
 import { useTranslation } from 'react-i18next'
 
 export const OrderInfo: FC = () => {

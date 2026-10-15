@@ -1,7 +1,7 @@
 import { useAppDispatch } from '@app/store'
 import { setRentDuration, setRentDurationMinutes } from '@entities/Order'
-import { formatRentDuration } from '@widgets/ConfigurationDatePick/lib/formatRentDuration'
-import { parseDate } from '@widgets/ConfigurationDatePick/lib/parseDate'
+import { formatRentDuration } from '../lib/formatRentDuration'
+import { parseDate } from '../lib/parseDate'
 import { useState } from 'react'
 
 export const useConfigurationDatePick = () => {

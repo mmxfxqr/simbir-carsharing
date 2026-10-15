@@ -1,5 +1,5 @@
-import type { OrderStepState } from '@widgets/OrderInfo/types'
-import { OrderInfoItem } from '@widgets/OrderInfo/ui/OrderInfoItem'
+import type { OrderStepState } from '../types'
+import { OrderInfoItem } from './OrderInfoItem'
 import type { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 

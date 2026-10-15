@@ -1,5 +1,5 @@
-import { costOutput } from '@widgets/OrderInfo/lib/costOutput'
-import type { OrderPriceProps } from '@widgets/OrderInfo/types'
+import { costOutput } from '../lib/costOutput'
+import type { OrderPriceProps } from '../types'
 import type { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 

@@ -1,5 +1,5 @@
 import { Input } from '@shared/ui/Input/ui/Input'
-import { useConfigurationDatePick } from '@widgets/ConfigurationDatePick/hooks/useConfigurationDatePick'
+import { useConfigurationDatePick } from '../hooks/useConfigurationDatePick'
 import type { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 

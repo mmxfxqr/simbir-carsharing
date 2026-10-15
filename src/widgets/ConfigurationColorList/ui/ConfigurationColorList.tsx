@@ -1,6 +1,6 @@
 import { RadioButton } from '@shared/ui/RadioButton'
-import { useConfigurationColorList } from '@widgets/ConfigurationColorList/hooks/useConfigurationColorList'
-import type { ConfigurationColorListProps } from '@widgets/ConfigurationColorList/types'
+import { useConfigurationColorList } from '../hooks/useConfigurationColorList'
+import type { ConfigurationColorListProps } from '../types'
 import type { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 

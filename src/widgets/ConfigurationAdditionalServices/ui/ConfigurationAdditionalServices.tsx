@@ -1,6 +1,6 @@
 import { CheckboxWithLabel } from '@shared/ui/CheckboxWithLabel'
-import { useConfigurationAdditionalServices } from '@widgets/ConfigurationAdditionalServices/hooks/useConfigurationAdditionalServices'
-import type { ConfigurationAdditionalServicesProps } from '@widgets/ConfigurationAdditionalServices/types'
+import { useConfigurationAdditionalServices } from '../hooks/useConfigurationAdditionalServices'
+import type { ConfigurationAdditionalServicesProps } from '../types'
 import type { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 

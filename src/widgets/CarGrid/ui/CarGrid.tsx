@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from '@app/store'
 import type { Car } from '@entities/Car/types'
 import { selectOrderCar, setCar, setCostRange } from '@entities/Order'
-import { useFilterCars } from '@widgets/CarGrid/hook/useFilterCars'
+import { useFilterCars } from '../hook/useFilterCars'
 import { CarCard } from '@widgets/CarGrid/ui/CarCard'
 import { FilterCars } from '@widgets/FillerCars'
 import { type FC } from 'react'

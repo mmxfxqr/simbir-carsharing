@@ -1,4 +1,4 @@
-import type { OrderInfoItemProps } from '@widgets/OrderInfo/types'
+import type { OrderInfoItemProps } from '../types'
 import type { FC } from 'react'
 
 export const OrderInfoItem: FC<OrderInfoItemProps> = ({ title, value }) => {

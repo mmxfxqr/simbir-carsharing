@@ -1,4 +1,4 @@
-import type { HeaderProps } from '@widgets/Header/types'
+import type { HeaderProps } from '../types'
 import clsx from 'clsx'
 import mapPoint from '@assets/homepage/mapPoint.svg'
 import type { FC } from 'react'

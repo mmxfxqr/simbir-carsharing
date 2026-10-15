@@ -1,6 +1,6 @@
 import { RadioButton } from '@shared/ui/RadioButton'
-import { filters } from '@widgets/FillerCars/config/filters'
-import type { FilterCarsProps } from '@widgets/FillerCars/types'
+import { filters } from '../config/filters'
+import type { FilterCarsProps } from '../types'
 import type { FC } from 'react'
 
 export const FilterCars: FC<FilterCarsProps> = ({
