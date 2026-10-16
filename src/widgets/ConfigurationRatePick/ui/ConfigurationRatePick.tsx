@@ -13,7 +13,9 @@ export const ConfigurationRatePick: FC<ConfigurationRatePickProps> = ({
 
   return (
     <div>
-      <h1 className="text-dark mb-4 text-[14px] font-light">{t('Rate')}</h1>
+      <h1 className="text-dark mb-4 text-sm font-light max-sm:text-xs">
+        {t('Rate')}
+      </h1>
       <div className="flex flex-col gap-2">
         {tariffsArr.map(([name, price]) => (
           <RadioButton

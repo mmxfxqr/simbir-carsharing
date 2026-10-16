@@ -26,7 +26,7 @@ export const Header: FC<HeaderProps> = ({ isInnerPage }) => {
       >
         Need for drive
       </a>
-      <div className="text-gray flex gap-2 text-[14px]">
+      <div className="text-gray flex gap-2 text-sm">
         <img src={mapPoint} />
         <h1>{t('Ulyanovsk')}</h1>
       </div>

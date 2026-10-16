@@ -15,7 +15,7 @@ export const RadioButton: FC<RadioButtonProps> = ({
   return (
     <label
       htmlFor={id}
-      className="flex cursor-pointer items-center gap-2 text-[14px]"
+      className="flex cursor-pointer items-center gap-2 text-sm max-sm:text-xs"
     >
       <input
         className="border-gray checked:border-primary size-3 h-3 w-3 appearance-none rounded-full border-2 checked:border-[3px]"
@@ -27,7 +27,7 @@ export const RadioButton: FC<RadioButtonProps> = ({
       />
       <span
         className={twMerge(
-          'text-gray text-[14px] font-light',
+          'text-gray text-sm font-light max-sm:text-xs',
           checked && 'text-dark',
         )}
       >

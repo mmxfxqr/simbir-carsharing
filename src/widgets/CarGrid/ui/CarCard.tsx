@@ -23,7 +23,7 @@ export const CarCard: FC<CarCardProps> = ({
       }
     >
       <h1 className="text-dark text-[18px] font-normal">{model}</h1>
-      <h1 className="text-gray mb-9 text-[14px] font-normal">{cost}</h1>
+      <h1 className="text-gray mb-9 text-sm font-normal">{cost}</h1>
       <div className="flex justify-end">
         <img
           src={image}

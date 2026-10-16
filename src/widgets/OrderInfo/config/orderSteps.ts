@@ -14,4 +14,11 @@ export const ORDER_STEPS = [
     buttonText: 'Configuration',
     isComplete: ({ model }: OrderStepState) => Boolean(model),
   },
+  {
+    path: RoutePath.Configuration,
+    nextPath: RoutePath.Total,
+    buttonText: 'Total',
+    isComplete: ({ color, rentDuration, selectedRate }: OrderStepState) =>
+      Boolean(color && rentDuration && selectedRate),
+  },
 ]

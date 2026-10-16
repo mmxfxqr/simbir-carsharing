@@ -5,6 +5,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   value: string
   isDisabled?: boolean
   isLabeled?: boolean
+  containerClassname?: string
   inputRef?: RefObject<HTMLInputElement | null>
   onClearClick?: () => void
   mask?: string

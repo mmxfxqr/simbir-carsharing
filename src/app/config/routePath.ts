@@ -3,4 +3,5 @@ export const RoutePath = {
   Location: 'location',
   Model: 'model',
   Configuration: 'configuration',
+  Total: 'total',
 } as const

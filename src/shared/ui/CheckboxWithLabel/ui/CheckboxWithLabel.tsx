@@ -7,6 +7,7 @@ export const CheckboxWithLabel: FC<CheckboxWithLabelProps> = ({
   label,
   onChange,
   checked,
+  labelClassname,
 }) => {
   return (
     <label className="flex w-fit cursor-pointer items-center gap-2">
@@ -33,8 +34,9 @@ export const CheckboxWithLabel: FC<CheckboxWithLabelProps> = ({
 
       <span
         className={twMerge(
-          'text-gray text-[14px] leading-none font-light',
+          'text-gray text-sm leading-none font-light',
           checked && 'text-dark',
+          labelClassname,
         )}
       >
         {label}

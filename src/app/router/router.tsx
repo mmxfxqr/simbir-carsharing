@@ -1,12 +1,13 @@
 import { AppConfig } from '@app/config/appConfig'
 import { RoutePath } from '@app/config/routePath'
 import { RootLayout } from '@app/layouts/RootLayout'
-import { ConfigurationGuard, ModelGuard } from '@app/router/guards'
+import { ConfigurationGuard, ModelGuard, TotalGuard } from '@app/router/guards'
 import { ConfigurationPage } from '@pages/ConfigurationPage'
 import { HomePage } from '@pages/HomePage'
 import { LocationPage } from '@pages/LocationPage'
 import { ModelPage } from '@pages/ModelPage'
 import { OrderPage } from '@pages/OrderPage'
+import { TotalPage } from '@pages/TotalPage'
 import { createBrowserRouter, Navigate } from 'react-router-dom'
 
 export const router = createBrowserRouter(
@@ -46,6 +47,15 @@ export const router = createBrowserRouter(
                 {
                   path: RoutePath.Configuration,
                   element: <ConfigurationPage />,
+                },
+              ],
+            },
+            {
+              element: <TotalGuard />,
+              children: [
+                {
+                  path: RoutePath.Total,
+                  element: <TotalPage />,
                 },
               ],
             },

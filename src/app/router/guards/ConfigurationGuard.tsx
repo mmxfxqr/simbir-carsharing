@@ -7,8 +7,9 @@ import { Navigate, Outlet } from 'react-router-dom'
 export const ConfigurationGuard: FC = () => {
   const location = useAppSelector(selectOrderLocation)
   const car = useAppSelector(selectOrderCar)
+  const isConfigurationAvailable = Boolean(location && car)
 
-  return location && car ? (
+  return isConfigurationAvailable ? (
     <Outlet />
   ) : (
     <Navigate to={RoutePath.Location} replace />

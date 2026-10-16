@@ -17,7 +17,7 @@ export const LocationMap: FC = () => {
 
   return (
     <div>
-      <h1 className="text-dark mb-4 text-[14px] font-light">
+      <h1 className="text-dark mb-4 text-sm font-light">
         {t('Select on the map:')}
       </h1>
       <div className="max h-88 w-184 max-xl:h-62.5 max-xl:w-75 max-sm:h-37.5 max-sm:w-50 [&_.ymaps-layers-pane]:grayscale">

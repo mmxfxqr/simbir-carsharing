@@ -3,6 +3,7 @@ import type { InputProps } from '../types'
 import { InputField } from './InputField'
 import { InputClearButton } from './InputClearButton'
 import { LabeledInput } from './LabeledInput'
+import { twMerge } from 'tailwind-merge'
 
 export const Input: FC<InputProps> = ({
   inputRef,
@@ -11,10 +12,11 @@ export const Input: FC<InputProps> = ({
   value,
   isDisabled,
   isLabeled,
+  containerClassname,
   ...props
 }) => {
   const input = (
-    <div className="relative w-full">
+    <div className={twMerge('relative w-full', containerClassname)}>
       <InputField
         {...props}
         inputRef={inputRef}

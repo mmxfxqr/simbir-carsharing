@@ -16,11 +16,12 @@ export const ConfigurationDatePick: FC = () => {
 
   return (
     <div>
-      <h1 className="text-dark mb-4 text-[14px] font-light">
+      <h1 className="text-dark mb-4 text-sm font-light max-sm:text-xs">
         {t('Rental date')}
       </h1>
-      <div className="text-dark flex w-fit flex-col gap-3 text-[14px] font-light">
+      <div className="text-dark flex w-fit flex-col gap-3 text-sm font-light max-sm:text-xs">
         <Input
+          containerClassname="max-sm:max-w-30"
           label={t('fromDate')}
           mask="00.00.0000 00:00"
           isLabeled
@@ -31,6 +32,7 @@ export const ConfigurationDatePick: FC = () => {
         />
 
         <Input
+          containerClassname="max-sm:max-w-30"
           label={t('toDate')}
           mask="00.00.0000 00:00"
           isLabeled

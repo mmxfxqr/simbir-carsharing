@@ -13,8 +13,10 @@ export const ConfigurationColorList: FC<ConfigurationColorListProps> = ({
 
   return (
     <div>
-      <h1 className="text-dark mb-4 text-[14px] font-light">{t('Color')}</h1>
-      <div className="flex gap-4">
+      <h1 className="text-dark mb-4 text-sm font-light max-sm:text-xs">
+        {t('Color')}
+      </h1>
+      <div className="flex gap-4 max-md:flex-col max-sm:gap-2">
         {colorOptions.map((color) => (
           <RadioButton
             key={color}

@@ -13,7 +13,9 @@ export const ConfigurationAdditionalServices: FC<
 
   return (
     <div>
-      <h1 className="text-dark mb-4 text-[14px] font-light">Доп услуги</h1>
+      <h1 className="text-dark mb-4 text-sm font-light max-sm:text-xs">
+        Доп услуги
+      </h1>
 
       <div className="flex flex-col gap-2">
         {services.map((service) => (
@@ -22,6 +24,7 @@ export const ConfigurationAdditionalServices: FC<
             label={`${t(service.name)}, ${service.cost} ₽`}
             checked={selectedAditionalServices?.includes(service.name) || false}
             onChange={(checked) => handleServiceChange(service.name, checked)}
+            labelClassname="max-sm:text-xs"
           />
         ))}
       </div>

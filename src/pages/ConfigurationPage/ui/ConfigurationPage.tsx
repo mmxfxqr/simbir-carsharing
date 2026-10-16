@@ -1,10 +1,5 @@
 import { useAppDispatch, useAppSelector } from '@app/store'
-import {
-  clearConfiguration,
-  selectOrderCar,
-  selectOrderCostRange,
-  setCost,
-} from '@entities/Order'
+import { selectOrderCar, selectOrderCostRange, setCost } from '@entities/Order'
 import { convertRangeToMinValue } from '@pages/OrderPage/lib/convertRangeToMinValue'
 import { ConfigurationAdditionalServices } from '@widgets/ConfigurationAdditionalServices'
 import { ConfigurationColorList } from '@widgets/ConfigurationColorList'
@@ -20,16 +15,12 @@ export const ConfigurationPage: FC = () => {
 
   useEffect(() => {
     if (startValue) dispatch(setCost(startValue))
-
-    return () => {
-      dispatch(clearConfiguration())
-    }
   }, [])
 
   if (!car) return null
 
   return (
-    <div className="flex flex-col gap-8 pt-8">
+    <div className="flex flex-col gap-8 pt-8 max-sm:max-w-40 max-sm:gap-4">
       <ConfigurationColorList colors={car.config.colors} />
       <ConfigurationDatePick />
       <ConfigurationRatePick tariffs={car.config.tariffs} />
