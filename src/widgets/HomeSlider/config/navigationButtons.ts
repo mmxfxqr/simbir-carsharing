@@ -1,3 +1,6 @@
+import leftArrow from '@assets/slider/left.svg'
+import rightArrow from '@assets/slider/right.svg'
+
 export interface NavigationButtonAtr {
   direction: string
   image: string
@@ -8,13 +11,13 @@ export interface NavigationButtonAtr {
 export const navigationButtonAtr: NavigationButtonAtr[] = [
   {
     direction: 'prev',
-    image: '/slider/left.svg',
+    image: leftArrow,
     position: 'left-0',
     alt: 'Назад',
   },
   {
     direction: 'next',
-    image: '/slider/right.svg',
+    image: rightArrow,
     position: 'right-0',
     alt: 'Вперед',
   },

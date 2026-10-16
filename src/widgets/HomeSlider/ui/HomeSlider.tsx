@@ -1,8 +1,8 @@
-import { slides } from '@widgets/HomeSlider/config/slides'
-import { useHomeSlider } from '@widgets/HomeSlider/hooks/useHomeSlider'
-import { HomeSliderNavigationButtons } from '@widgets/HomeSlider/ui/HomeSliderNavigationButtons'
-import { HomeSliderPagination } from '@widgets/HomeSlider/ui/HomeSliderPagination'
-import { Slide } from '@widgets/HomeSlider/ui/Slide'
+import { slides } from '../config/slides'
+import { useHomeSlider } from '../hooks/useHomeSlider'
+import { HomeSliderNavigationButtons } from './HomeSliderNavigationButtons'
+import { HomeSliderPagination } from './HomeSliderPagination'
+import { Slide } from './Slide'
 import useEmblaCarousel from 'embla-carousel-react'
 import type { FC } from 'react'
 
