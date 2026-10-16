@@ -22,10 +22,10 @@ export const TotalOrderCard: FC = () => {
   const fromDate = useAppSelector(selectOrderFromDate)
 
   return (
-    <div className="flex w-full items-center justify-between">
+    <div className="flex w-full items-center justify-between max-lg:flex-col max-lg:items-start max-lg:gap-4">
       <div className="flex flex-col gap-2">
-        <h1 className="text-lg font-normal">{carModel}</h1>
-        <div className="border-gray box-border flex h-6 w-fit items-center justify-center rounded-sm border px-2 py-1 text-sm leading-4 font-normal">
+        <h1 className="text-lg font-normal max-sm:text-sm">{carModel}</h1>
+        <div className="border-gray box-border flex h-6 w-fit items-center justify-center rounded-sm border px-2 py-1 text-sm leading-4 font-normal max-sm:text-xs">
           {carColor?.plate}
         </div>
         <TotalOrderServiceItems services={services} />
