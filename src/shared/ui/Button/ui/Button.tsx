@@ -15,7 +15,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
     <button
       className={twMerge(
         clsx(
-          'bg-primary flex h-12 items-center justify-center rounded-lg text-[18px] font-medium text-white hover:brightness-90 focus:brightness-90 active:brightness-80',
+          'bg-primary flex h-12 items-center justify-center rounded-lg text-lg font-medium text-white hover:brightness-90 focus:brightness-90 active:brightness-80',
           disabled && 'bg-white',
           className,
         ),

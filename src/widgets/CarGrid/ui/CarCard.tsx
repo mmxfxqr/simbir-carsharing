@@ -22,7 +22,7 @@ export const CarCard: FC<CarCardProps> = ({
         onCardClick({ brand, category, config, cost, image, model })
       }
     >
-      <h1 className="text-dark text-[18px] font-normal">{model}</h1>
+      <h1 className="text-dark text-lg font-normal">{model}</h1>
       <h1 className="text-gray mb-9 text-sm font-normal">{cost}</h1>
       <div className="flex justify-end">
         <img

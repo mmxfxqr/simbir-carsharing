@@ -11,6 +11,7 @@ export const selectOrderSelectedServicesCost = (state: RootState) =>
   state.order.selectedServicesCost
 export const selectOrderCostRange = (state: RootState) => state.order.costRange
 export const selectOrderColor = (state: RootState) => state.order.selectedColor
+export const selectOrderFromDate = (state: RootState) => state.order.fromDate
 export const selectOrderRentDuration = (state: RootState) =>
   state.order.rentDuration
 export const selectOrderRentDurationMinutes = (state: RootState) =>

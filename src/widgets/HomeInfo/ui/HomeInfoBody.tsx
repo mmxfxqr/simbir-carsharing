@@ -21,7 +21,7 @@ export const HomeInfoBody: FC = () => {
         <h1 className="text-primary mb-8.5 text-[70px] leading-16.5 font-bold max-md:mb-4 max-md:text-[32px] max-md:leading-8">
           Need for drive
         </h1>
-        <h1 className="text-gray text-[26px] font-light max-md:text-[18px]">
+        <h1 className="text-gray text-[26px] font-light max-md:text-lg">
           {t('Minute-by-minute car rental in your city')}
         </h1>
       </div>

@@ -51,6 +51,9 @@ const orderSlice = createSlice({
     ) => {
       state.rentDurationMinutes = action.payload
     },
+    setFromDate: (state, action: PayloadAction<Nullable<string>>) => {
+      state.fromDate = action.payload
+    },
     setSelectedRate: (state, action: PayloadAction<Nullable<RateType>>) => {
       state.selectedRate = action.payload
     },
@@ -70,6 +73,7 @@ const orderSlice = createSlice({
       state.selectedServicesCost = null
       state.rentDuration = null
       state.rentDurationMinutes = null
+      state.fromDate = null
       state.selectedColor = null
       state.selectedRate = null
       state.selectedAdditionalServices = null
@@ -85,6 +89,7 @@ export const {
   setCost,
   setColorCost,
   setRentDurationCost,
+  setFromDate,
   setSelectedServicesCost,
   setCostRange,
   setRentDuration,

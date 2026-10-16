@@ -11,6 +11,7 @@ export interface Car {
 export type CarColor = {
   name: string
   extraCost: number
+  plate: string
 }
 
 export type AdditionalService = {
