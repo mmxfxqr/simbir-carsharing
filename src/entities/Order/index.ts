@@ -16,7 +16,9 @@ export {
   setSelectedColor,
   setSelectedRate,
   setAdditionalServices,
+  setOrder,
   clearConfiguration,
+  clearOrder,
 } from './model/orderSlice'
 export {
   selectOrderAdress,
@@ -35,4 +37,6 @@ export {
   selectOrderRentDurationMinutes,
   selectOrderAdditionalServices,
   selectOrderTotalCost,
+  selectOrderState,
+  selectOrder,
 } from './model/selectors'

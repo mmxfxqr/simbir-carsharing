@@ -1,4 +1,5 @@
-import { useAppSelector } from '@app/store'
+import { RoutePath } from '@app/config/routePath'
+import { useAppDispatch, useAppSelector } from '@app/store'
 import {
   selectOrderTotalCost,
   selectOrderLocation,
@@ -8,6 +9,10 @@ import {
   selectOrderCostRange,
   selectOrderSelectedRate,
   selectOrderAdditionalServices,
+  selectOrderState,
+  setOrder,
+  selectOrder,
+  clearOrder,
 } from '@entities/Order'
 
 import { getLastPathSegment } from '@shared/lib/getLastPathSegment'
@@ -19,6 +24,9 @@ export const useOrderInfo = () => {
   const { pathname } = useLocation()
   const currentPath = getLastPathSegment(pathname)
 
+  const dispatch = useAppDispatch()
+  const orderInfo = useAppSelector(selectOrderState)
+  const order = useAppSelector(selectOrder)
   const location = useAppSelector(selectOrderLocation)
   const car = useAppSelector(selectOrderCar)
   const color = useAppSelector(selectOrderColor)
@@ -29,8 +37,8 @@ export const useOrderInfo = () => {
   )
   const totalCost = useAppSelector(selectOrderTotalCost)
   const costRange = useAppSelector(selectOrderCostRange)
-  
   const model = car ? `${car.brand}, ${car.model}` : null
+  const isOrderCreated = Boolean(order)
 
   const orderState = {
     location,
@@ -47,10 +55,31 @@ export const useOrderInfo = () => {
 
   const handleNextStepClick = () => {
     if (!currentStep) return
-    navigate(currentStep.nextPath)
+    if (currentStep.nextPath) navigate(currentStep.nextPath)
+    if (currentStep.path === RoutePath.Total) {
+      if (isOrderCreated) {
+        handleCancelOrder()
+        navigate(RoutePath.Location)
+
+        return
+      }
+      handleCreateOrder()
+
+      return
+    }
+  }
+  const handleCreateOrder = () => {
+    const orderNumber = `RU${Math.floor(100000000 + Math.random() * 900000000)}`
+    console.log(`Заказ номер ${orderNumber}`)
+    dispatch(setOrder({ id: orderNumber, ...orderInfo }))
+  }
+
+  const handleCancelOrder = () => {
+    dispatch(clearOrder())
   }
 
   return {
+    isOrderCreated,
     orderState,
     totalCost,
     costRange,

@@ -8,8 +8,14 @@ import { useTranslation } from 'react-i18next'
 
 export const OrderInfo: FC = () => {
   const { t } = useTranslation()
-  const { totalCost, costRange, currentStep, handleNextStepClick, orderState } =
-    useOrderInfo()
+  const {
+    totalCost,
+    costRange,
+    currentStep,
+    handleNextStepClick,
+    orderState,
+    isOrderCreated,
+  } = useOrderInfo()
 
   return (
     <div className="flex w-full max-w-[320px] flex-col border-l border-white pt-8 pl-8 max-sm:pl-4">
@@ -31,8 +37,9 @@ export const OrderInfo: FC = () => {
           className="max-xl: mx-auto w-full max-xl:max-w-36 max-xl:text-sm"
           disabled={!currentStep?.isComplete(orderState)}
           onClick={handleNextStepClick}
+          isRed={isOrderCreated}
         >
-          {t(`${currentStep?.buttonText}`)}
+          {isOrderCreated ? 'Отменить' : t(`${currentStep?.buttonText}`)}
         </Button>
       </div>
     </div>

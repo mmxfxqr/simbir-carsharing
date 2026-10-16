@@ -28,7 +28,7 @@ export const InputSelectionMenu: FC<SelectProps> = ({
     <div
       className={clsx('text-dark relative flex text-sm font-light', classname)}
     >
-      <h1 className="mr-4 flex w-[18px] shrink-0 justify-end max-sm:w-12">
+      <h1 className="mr-4 flex w-22.75 shrink-0 justify-end max-sm:w-12">
         {label}
       </h1>
 

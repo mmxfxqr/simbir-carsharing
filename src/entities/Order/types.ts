@@ -2,6 +2,10 @@ import type { Car } from '@entities/Car/types'
 import type { Nullable } from '@shared/types'
 import type { RateType } from '@widgets/ConfigurationRatePick/types'
 
+export interface Order extends OrderState {
+  id: string
+}
+
 export interface OrderState {
   city: string
   address: Nullable<string>
@@ -19,4 +23,5 @@ export interface OrderState {
   rentDurationCost: Nullable<number>
   costRange: Nullable<string>
   configuration: Nullable<string>
+  order: Nullable<Order>
 }

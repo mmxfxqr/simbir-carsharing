@@ -42,3 +42,5 @@ export const selectOrderTotalCost = (state: RootState) => {
     (selectedServicesCost ?? 0)
   )
 }
+export const selectOrder = (state: RootState) => state.order.order
+export const selectOrderState = (state: RootState) => state.order

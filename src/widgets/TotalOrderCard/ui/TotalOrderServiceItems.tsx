@@ -14,11 +14,20 @@ export const TotalOrderServiceItems: FC<TotalOrderServiceItemsProps> = ({
     <div className="flex flex-col gap-2">
       {services.map((service) =>
         service === 'Full tank' ? (
-          <TotalOrderTextItem labelValue={t('Order fuel')} value="100%" />
+          <TotalOrderTextItem
+            key={service}
+            labelValue={t('Order fuel')}
+            value="100%"
+          />
         ) : service === 'Child seat' ? (
-          <TotalOrderTextItem labelValue={t('Child seat')} value={t('Yes')} />
+          <TotalOrderTextItem
+            key={service}
+            labelValue={t('Child seat')}
+            value={t('Yes')}
+          />
         ) : (
           <TotalOrderTextItem
+            key={service}
             labelValue={t('Right-hand drive')}
             value={t('Yes')}
           />

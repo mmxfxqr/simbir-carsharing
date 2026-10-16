@@ -3,6 +3,7 @@ import { initialState } from './initialState'
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import type { Nullable } from '@shared/types'
 import type { RateType } from '@widgets/ConfigurationRatePick/types'
+import type { Order } from '@entities/Order/types'
 
 const orderSlice = createSlice({
   name: 'order',
@@ -63,6 +64,9 @@ const orderSlice = createSlice({
     ) => {
       state.selectedAdditionalServices = action.payload
     },
+    setOrder: (state, action: PayloadAction<Nullable<Order>>) => {
+      state.order = action.payload
+    },
     clearCar: (state) => {
       state.car = null
     },
@@ -77,6 +81,12 @@ const orderSlice = createSlice({
       state.selectedColor = null
       state.selectedRate = null
       state.selectedAdditionalServices = null
+    },
+    clearOrder: (state) => {
+      state.location = null
+      clearCar()
+      clearConfiguration()
+      state.order = null
     },
   },
 })
@@ -97,8 +107,10 @@ export const {
   setSelectedColor,
   setSelectedRate,
   setAdditionalServices,
+  setOrder,
   clearCar,
   clearConfiguration,
+  clearOrder,
 } = orderSlice.actions
 
 export const orderReducer = orderSlice.reducer

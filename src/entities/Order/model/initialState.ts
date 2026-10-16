@@ -18,4 +18,5 @@ export const initialState: OrderState = {
   rentDurationCost: null,
   costRange: null,
   configuration: null,
+  order: null,
 }
