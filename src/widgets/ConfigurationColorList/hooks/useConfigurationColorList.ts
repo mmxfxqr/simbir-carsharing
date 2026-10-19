@@ -1,6 +1,7 @@
 import { useAppDispatch, useAppSelector } from '@app/store'
 import type { CarColor } from '@entities/Car/types'
 import {
+  selectOrderColor,
   selectOrderColorCost,
   selectOrderCost,
   setColorCost,
@@ -14,9 +15,12 @@ export const useConfigurationColorList = (t: TFunction, colors: CarColor[]) => {
   const dispatch = useAppDispatch()
   const cost = useAppSelector(selectOrderCost)
   const colorCost = useAppSelector(selectOrderColorCost)
-  const [selectedFilter, setSelectedFilter] = useState<string>('')
+  const selectedColor = useAppSelector(selectOrderColor)
+  const [selectedFilter, setSelectedFilter] = useState<string>(
+    selectedColor || '',
+  )
   const colorOptions = [t('Any'), ...colors.map((color) => color.name)]
-  
+
   const handleRadioClick = (color: string) => {
     setSelectedFilter(color)
     dispatch(setSelectedColor(color))

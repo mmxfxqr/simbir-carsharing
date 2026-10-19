@@ -1,5 +1,6 @@
 import { useAppDispatch, useAppSelector } from '@app/store'
 import {
+  selectOrderAdress,
   selectOrderCity,
   setAddress,
   setCity,
@@ -14,6 +15,8 @@ export const SelectLocation: FC = () => {
   const { t } = useTranslation()
   const city = useAppSelector(selectOrderCity)
   const dispatch = useAppDispatch()
+  const selectedCity = useAppSelector(selectOrderCity)
+  const selectedAddress = useAppSelector(selectOrderAdress)
 
   const handleSelectCityValue = (value: string) => {
     dispatch(setLocation(null))
@@ -31,6 +34,7 @@ export const SelectLocation: FC = () => {
         classname="mb-2"
         variants={Object.keys(location)}
         onSelect={handleSelectCityValue}
+        defaultValue={selectedCity || ''}
       />
       <InputSelectionMenu
         key={city}
@@ -38,6 +42,7 @@ export const SelectLocation: FC = () => {
         variants={Object.keys(location[city].addresses || {})}
         onSelect={handleSelecteAdressValue}
         isDisabled={!city}
+        defaultValue={selectedAddress || ''}
       />
     </div>
   )

@@ -22,6 +22,8 @@ export const selectOrderColor = (state: RootState) => state.order.selectedColor
 
 export const selectOrderFromDate = (state: RootState) => state.order.fromDate
 
+export const selectOrderToDate = (state: RootState) => state.order.toDate
+
 export const selectOrderRentDuration = (state: RootState) =>
   state.order.rentDuration
 

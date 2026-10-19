@@ -36,7 +36,7 @@ export const ConfigurationDatePick: FC = () => {
           label={t('toDate')}
           mask="00.00.0000 00:00"
           isLabeled
-          value={toDate}
+          value={toDate || ''}
           placeholder={t('Enter the date and time')}
           onAccept={handleSetToDate}
           onClearClick={handleClearToDate}

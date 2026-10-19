@@ -11,6 +11,7 @@ export const InputSelectionMenu: FC<SelectProps> = ({
   variants,
   onSelect,
   isDisabled,
+  defaultValue,
 }) => {
   const {
     value,
@@ -22,7 +23,7 @@ export const InputSelectionMenu: FC<SelectProps> = ({
     handleFocus,
     handleSelect,
     isFocused,
-  } = useInputSelect({ variants, onSelect })
+  } = useInputSelect({ variants, onSelect, defaultValue })
 
   return (
     <div
@@ -42,6 +43,7 @@ export const InputSelectionMenu: FC<SelectProps> = ({
           onFocus={handleFocus}
           onBlur={handleBlur}
           onChange={handleChange}
+          defaultValue={defaultValue}
         />
 
         {filteredVariants?.length > 0 && isFocused && (

@@ -1,21 +1,22 @@
 import { useAppDispatch, useAppSelector } from '@app/store'
 import {
   selectOrderFromDate,
+  selectOrderToDate,
   setFromDate,
   setRentDuration,
   setRentDurationMinutes,
+  setToDate,
 } from '@entities/Order'
 import { formatRentDuration } from '../lib/formatRentDuration'
 import { parseDate } from '../lib/parseDate'
-import { useState } from 'react'
 
 export const useConfigurationDatePick = () => {
   const MS_PER_SECOND = 1000
   const SECONDS_PER_MINUTE = 60
 
-  const [toDate, setToDate] = useState<string>('')
   const dispatch = useAppDispatch()
   const fromDate = useAppSelector(selectOrderFromDate)
+  const toDate = useAppSelector(selectOrderToDate)
 
   const updateRentDuration = (nextFromDate: string, nextToDate: string) => {
     if (!nextFromDate || !nextToDate) return
@@ -32,14 +33,14 @@ export const useConfigurationDatePick = () => {
   }
 
   const handleSetToDate = (toDate: string) => {
-    setToDate(toDate)
+    dispatch(setToDate(toDate))
     updateRentDuration(fromDate || '', toDate)
   }
 
   const handleSetFromDate = (fromDate: string) => {
     setFromDate(fromDate)
     dispatch(setFromDate(fromDate))
-    updateRentDuration(fromDate, toDate)
+    updateRentDuration(fromDate, toDate || '')
   }
 
   const clearRentDuration = () => {

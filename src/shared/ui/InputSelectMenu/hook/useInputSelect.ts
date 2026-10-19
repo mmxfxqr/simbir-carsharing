@@ -1,8 +1,12 @@
 import type { UseInputSelectProps } from '../types'
 import { useRef, useState } from 'react'
 
-export const useInputSelect = ({ onSelect, variants }: UseInputSelectProps) => {
-  const [value, setValue] = useState<string>('')
+export const useInputSelect = ({
+  onSelect,
+  variants,
+  defaultValue,
+}: UseInputSelectProps) => {
+  const [value, setValue] = useState<string>(defaultValue || '')
   const [isFocused, setIsFocused] = useState<boolean>(false)
   const inputRef = useRef<HTMLInputElement>(null)
 

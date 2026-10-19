@@ -18,6 +18,7 @@ export interface InputSelectionFieldProps extends InputHTMLAttributes<HTMLInputE
 export interface UseInputSelectProps {
   variants: string[]
   onSelect: (value: string) => void
+  defaultValue?: string
 }
 export interface DropDownProps {
   filteredVariants: string[]
