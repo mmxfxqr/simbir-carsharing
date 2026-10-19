@@ -28,7 +28,7 @@ export const CarCard: FC<CarCardProps> = ({
         <img
           src={image}
           alt={model}
-          className="mb-2 block max-h-29 w-full max-w-[256px] object-contain max-lg:max-w-50"
+          className="block max-h-29 w-full max-w-[256px] object-contain max-lg:max-w-50"
         />
       </div>
     </div>

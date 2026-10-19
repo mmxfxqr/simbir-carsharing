@@ -5,14 +5,8 @@ import { useTranslation } from 'react-i18next'
 
 export const ConfigurationDatePick: FC = () => {
   const { t } = useTranslation()
-  const {
-    fromDate,
-    toDate,
-    handleSetFromDate,
-    handleSetToDate,
-    handleClearFromDate,
-    handleClearToDate,
-  } = useConfigurationDatePick()
+  const { fromDate, toDate, handleSetFromDate, handleSetToDate } =
+    useConfigurationDatePick()
 
   return (
     <div>
@@ -28,7 +22,7 @@ export const ConfigurationDatePick: FC = () => {
           placeholder={t('Enter the date and time')}
           value={fromDate || ''}
           onAccept={handleSetFromDate}
-          onClearClick={handleClearFromDate}
+          onClearClick={() => handleSetFromDate('')}
         />
 
         <Input
@@ -39,7 +33,7 @@ export const ConfigurationDatePick: FC = () => {
           value={toDate || ''}
           placeholder={t('Enter the date and time')}
           onAccept={handleSetToDate}
-          onClearClick={handleClearToDate}
+          onClearClick={() => handleSetToDate('')}
         />
       </div>
     </div>
