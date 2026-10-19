@@ -21,7 +21,7 @@ export const InputSelectionMenu: FC<SelectProps> = ({
     handleChange,
     handleClearClick,
     handleFocus,
-    handleSelect,
+    handleSubmit,
     isFocused,
   } = useInputSelect({ variants, onSelect, defaultValue })
 
@@ -49,7 +49,7 @@ export const InputSelectionMenu: FC<SelectProps> = ({
         {filteredVariants?.length > 0 && isFocused && (
           <DropDown
             filteredVariants={filteredVariants}
-            onSelect={handleSelect}
+            onSelect={handleSubmit}
           />
         )}
       </div>

@@ -3,6 +3,8 @@ import clsx from 'clsx'
 import type { FC } from 'react'
 import { IMaskInput } from 'react-imask'
 
+const MAX_INPUT_LENGTH = 150
+
 export const InputField: FC<InputProps> = ({
   label,
   mask,
@@ -13,7 +15,7 @@ export const InputField: FC<InputProps> = ({
   ...props
 }) => {
   const inputClassName = clsx(
-    'border-b-gray box-border w-full appearance-none border-b outline-none',
+    'box-border max-w-[206px] w-full appearance-none  outline-none',
     className,
   )
 
@@ -27,6 +29,7 @@ export const InputField: FC<InputProps> = ({
         value={String(props.value ?? '')}
         disabled={isDisabled}
         onAccept={onAccept}
+        maxLength={MAX_INPUT_LENGTH}
       />
     )
   }
@@ -38,6 +41,7 @@ export const InputField: FC<InputProps> = ({
       ref={inputRef}
       className={inputClassName}
       disabled={isDisabled}
+      maxLength={MAX_INPUT_LENGTH}
     />
   )
 }

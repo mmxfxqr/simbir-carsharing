@@ -1,5 +1,5 @@
 import type { UseInputSelectProps } from '../types'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export const useInputSelect = ({
   onSelect,
@@ -10,18 +10,26 @@ export const useInputSelect = ({
   const [isFocused, setIsFocused] = useState<boolean>(false)
   const inputRef = useRef<HTMLInputElement>(null)
 
+  useEffect(() => {
+    if (variants.includes(value)) handleSubmit(value)
+  }, [value, variants])
+
   const filteredVariants = variants?.filter((variant) =>
     variant.toLowerCase().includes(value.toLowerCase()),
   )
+
   const handleClearClick = () => {
     setValue('')
     inputRef.current?.focus()
   }
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.currentTarget.value.trim() && e.currentTarget.value !== '') return
+
     setValue(e.currentTarget.value)
   }
 
-  const handleSelect = (variant: string) => {
+  const handleSubmit = (variant: string) => {
     setValue(variant)
     onSelect(variant)
   }
@@ -41,7 +49,7 @@ export const useInputSelect = ({
     filteredVariants,
     handleClearClick,
     handleChange,
-    handleSelect,
+    handleSubmit,
     handleBlur,
     handleFocus,
   }
