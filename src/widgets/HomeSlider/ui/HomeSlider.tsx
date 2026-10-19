@@ -4,12 +4,17 @@ import { HomeSliderNavigationButtons } from './HomeSliderNavigationButtons'
 import { HomeSliderPagination } from './HomeSliderPagination'
 import { Slide } from './Slide'
 import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
 import type { FC } from 'react'
+import { useAutoplay } from '@widgets/HomeSlider/hooks/useAutoPlay'
 
 export const HomeSlider: FC = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false })
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false }, [
+    Autoplay({ delay: 3000 }),
+  ])
   const { goTo, scrollSnaps, selectedIndex, goToNext, goToPrev } =
     useHomeSlider(emblaApi)
+  const { onAutoplayButtonClick } = useAutoplay(emblaApi)
 
   return (
     <div className="relative block h-screen flex-1 max-lg:hidden">
@@ -21,8 +26,8 @@ export const HomeSlider: FC = () => {
         </div>
       </div>
       <HomeSliderNavigationButtons
-        onGoToNextClick={goToNext}
-        onGoToPrevClick={goToPrev}
+        onGoToNextClick={() => onAutoplayButtonClick(goToNext)}
+        onGoToPrevClick={() => onAutoplayButtonClick(goToPrev)}
       />
       <HomeSliderPagination
         onGoTo={goTo}
