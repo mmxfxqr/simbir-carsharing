@@ -26,7 +26,7 @@ export const ConfigurationDatePick: FC = () => {
           mask="00.00.0000 00:00"
           isLabeled
           placeholder={t('Enter the date and time')}
-          value={fromDate}
+          value={fromDate || ''}
           onAccept={handleSetFromDate}
           onClearClick={handleClearFromDate}
         />

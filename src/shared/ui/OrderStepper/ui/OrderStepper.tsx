@@ -7,10 +7,11 @@ import { selectOrder } from '@entities/Order'
 export const OrderStepper: FC = () => {
   const order = useAppSelector(selectOrder)
 
-  if (order)
+  if (order) {
     return (
       <h1 className="pt-2 pl-16 text-sm font-bold">Заказ номер {order.id}</h1>
     )
+  }
 
   return (
     <div className="flex border-y border-[#EEE] py-2 pl-16 max-sm:p-2">

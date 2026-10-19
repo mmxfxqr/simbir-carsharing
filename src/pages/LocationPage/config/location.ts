@@ -1,6 +1,6 @@
 import type { Locations } from '../types'
 
-export const locations: Locations = {
+export const location: Locations = {
   Ульяновск: {
     center: [54.317858, 48.397526],
     zoom: 13,

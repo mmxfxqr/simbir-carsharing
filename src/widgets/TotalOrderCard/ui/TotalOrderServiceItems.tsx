@@ -1,3 +1,4 @@
+import { TOTAL_ORDER_SERVICE_CONFIG } from '@widgets/TotalOrderCard/config/totalOrderServiceConfig'
 import type { TotalOrderServiceItemsProps } from '@widgets/TotalOrderCard/types'
 import { TotalOrderTextItem } from '@widgets/TotalOrderCard/ui/TotalOrderTextItem'
 import type { FC } from 'react'
@@ -12,27 +13,13 @@ export const TotalOrderServiceItems: FC<TotalOrderServiceItemsProps> = ({
 
   return (
     <div className="flex flex-col gap-2">
-      {services.map((service) =>
-        service === 'Full tank' ? (
-          <TotalOrderTextItem
-            key={service}
-            labelValue={t('Order fuel')}
-            value="100%"
-          />
-        ) : service === 'Child seat' ? (
-          <TotalOrderTextItem
-            key={service}
-            labelValue={t('Child seat')}
-            value={t('Yes')}
-          />
-        ) : (
-          <TotalOrderTextItem
-            key={service}
-            labelValue={t('Right-hand drive')}
-            value={t('Yes')}
-          />
-        ),
-      )}
+      {services.map((service) => (
+        <TotalOrderTextItem
+          key={service}
+          labelValue={t(TOTAL_ORDER_SERVICE_CONFIG[service].labelValue)}
+          value={t(TOTAL_ORDER_SERVICE_CONFIG[service].value)}
+        />
+      ))}
     </div>
   )
 }

@@ -63,9 +63,8 @@ export const useOrderInfo = () => {
 
         return
       }
-      handleCreateOrder()
 
-      return
+      handleCreateOrder()
     }
   }
   const handleCreateOrder = () => {

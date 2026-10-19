@@ -5,7 +5,7 @@ import {
   setCity,
   setLocation,
 } from '@entities/Order'
-import { locations } from '@pages/LocationPage/config/location'
+import { location } from '@pages/LocationPage/config/location'
 import { InputSelectionMenu } from '@shared/ui/InputSelectMenu'
 import type { FC } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -29,13 +29,13 @@ export const SelectLocation: FC = () => {
       <InputSelectionMenu
         label={t('City')}
         classname="mb-2"
-        variants={Object.keys(locations)}
+        variants={Object.keys(location)}
         onSelect={handleSelectCityValue}
       />
       <InputSelectionMenu
         key={city}
         label={t('Pickup point')}
-        variants={Object.keys(locations[city].addresses || {})}
+        variants={Object.keys(location[city].addresses || {})}
         onSelect={handleSelecteAdressValue}
         isDisabled={!city}
       />

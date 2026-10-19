@@ -22,7 +22,7 @@ export const CarGrid: FC = () => {
         selectedFilterId={selectedFilterId}
         onFilterChange={handleFilterChange}
       />
-      <div className="mt-12 grid max-w-184 min-w-0 grid-cols-2 gap-px max-xl:grid-cols-1 max-sm:mt-4">
+      <div className="mt-12 grid max-h-168.5 w-full max-w-184 min-w-0 scrollbar-thin grid-cols-2 gap-px overflow-x-hidden overflow-y-auto max-xl:grid-cols-1 max-sm:mt-4">
         {filtredCars.map((car) => (
           <CarCard
             key={car.model}
