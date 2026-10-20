@@ -1,4 +1,5 @@
 import type { Car } from '@entities/Car/types'
+import type { ValueOf } from '@shared/types'
 
 export interface CarCardProps extends Car {
   onCardClick: (car: Car) => void
@@ -11,4 +12,4 @@ export const FilterId = {
   Economy: 'economy',
 } as const
 
-export type FilterId = (typeof FilterId)[keyof typeof FilterId]
+export type FilterId = ValueOf<typeof FilterId>

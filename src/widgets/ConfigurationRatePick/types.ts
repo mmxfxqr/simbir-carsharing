@@ -1,3 +1,5 @@
+import type { ValueOf } from '@shared/types'
+
 export interface Tariffs {
   perMinute: number
   perDay: number
@@ -11,4 +13,4 @@ export const RateType = {
   PerDay: 'perDay',
 } as const
 
-export type RateType = (typeof RateType)[keyof typeof RateType]
+export type RateType = ValueOf<typeof RateType>

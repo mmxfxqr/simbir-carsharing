@@ -1,6 +1,6 @@
 import type { Car } from '@entities/Car/types'
 import type { TOTAL_ORDER_SERVICES } from '@entities/Order/model/orderAdditionalService'
-import type { Nullable } from '@shared/types'
+import type { Nullable, ValueOf } from '@shared/types'
 import type { RateType } from '@widgets/ConfigurationRatePick/types'
 
 export interface Order extends OrderState {
@@ -28,8 +28,7 @@ export interface OrderState {
   order: Nullable<Order>
 }
 
-export type Service =
-  (typeof TOTAL_ORDER_SERVICES)[keyof typeof TOTAL_ORDER_SERVICES]
+export type Service = ValueOf<typeof TOTAL_ORDER_SERVICES>
 export type TotalOrderServiceConfig = Record<
   Service,
   { labelValue: string; value: string }
