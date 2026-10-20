@@ -18,10 +18,11 @@ import {
 import { getLastPathSegment } from '@shared/lib/getLastPathSegment'
 import { ORDER_STEPS } from '@widgets/OrderInfo/config/orderSteps'
 import { useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 
 export const useOrderInfo = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
+  const [, setSearchParams] = useSearchParams()
 
   const navigate = useNavigate()
   const { pathname } = useLocation()
@@ -75,6 +76,11 @@ export const useOrderInfo = () => {
     console.log(`Заказ номер ${orderNumber}`)
     dispatch(setOrder({ id: orderNumber, ...orderInfo }))
     handleModalClose()
+    setSearchParams((prev) => {
+      prev.set('orderId', orderNumber)
+
+      return prev
+    })
   }
 
   const handleCancelOrder = () => {
