@@ -6,9 +6,9 @@ import {
   setCity,
   setLocation,
 } from '@entities/Order'
-import { location } from '@pages/LocationPage/config/location'
+import { locations } from '@pages/LocationPage'
 import { InputSelectionMenu } from '@shared/ui/InputSelectMenu'
-import type { FC } from 'react'
+import { useEffect, type FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export const SelectLocation: FC = () => {
@@ -17,6 +17,10 @@ export const SelectLocation: FC = () => {
   const dispatch = useAppDispatch()
   const selectedCity = useAppSelector(selectOrderCity)
   const selectedAddress = useAppSelector(selectOrderAdress)
+
+  useEffect(() => {
+    console.log(selectedCity, selectOrderAdress)
+  }, [selectedCity, selectOrderAdress])
 
   const handleSelectCityValue = (value: string) => {
     dispatch(setLocation(null))
@@ -32,14 +36,14 @@ export const SelectLocation: FC = () => {
       <InputSelectionMenu
         label={t('City')}
         classname="mb-2"
-        variants={Object.keys(location)}
+        variants={Object.keys(locations)}
         onSelect={handleSelectCityValue}
         defaultValue={selectedCity || ''}
       />
       <InputSelectionMenu
         key={city}
         label={t('Pickup point')}
-        variants={Object.keys(location[city].addresses || {})}
+        variants={Object.keys(locations[city].addresses || '')}
         onSelect={handleSelecteAdressValue}
         isDisabled={!city}
         defaultValue={selectedAddress || ''}

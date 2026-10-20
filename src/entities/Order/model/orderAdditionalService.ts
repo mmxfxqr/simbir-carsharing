@@ -1,4 +1,4 @@
-import type { TotalOrderServiceConfig } from '@widgets/TotalOrderCard/types'
+import type { TotalOrderServiceConfig } from "@entities/Order/types"
 
 export const TOTAL_ORDER_SERVICES = {
   FULL_TANK: 'Full tank',
@@ -19,4 +19,4 @@ export const TOTAL_ORDER_SERVICE_CONFIG = {
     labelValue: 'Right-hand drive',
     value: 'Yes',
   },
-} as TotalOrderServiceConfig
+} satisfies TotalOrderServiceConfig

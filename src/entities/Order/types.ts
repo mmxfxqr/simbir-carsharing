@@ -1,4 +1,5 @@
 import type { Car } from '@entities/Car/types'
+import type { TOTAL_ORDER_SERVICES } from '@entities/Order/model/orderAdditionalService'
 import type { Nullable } from '@shared/types'
 import type { RateType } from '@widgets/ConfigurationRatePick/types'
 
@@ -17,7 +18,7 @@ export interface OrderState {
   fromDate: Nullable<string>
   toDate: Nullable<string>
   selectedRate: Nullable<RateType>
-  selectedAdditionalServices: Nullable<string[]>
+  selectedAdditionalServices: Nullable<Service[]>
   cost: Nullable<number>
   colorCost: Nullable<number>
   selectedServicesCost: Nullable<number>
@@ -26,3 +27,10 @@ export interface OrderState {
   configuration: Nullable<string>
   order: Nullable<Order>
 }
+
+export type Service =
+  (typeof TOTAL_ORDER_SERVICES)[keyof typeof TOTAL_ORDER_SERVICES]
+export type TotalOrderServiceConfig = Record<
+  Service,
+  { labelValue: string; value: string }
+>

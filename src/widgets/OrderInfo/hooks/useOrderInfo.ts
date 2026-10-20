@@ -17,9 +17,12 @@ import {
 
 import { getLastPathSegment } from '@shared/lib/getLastPathSegment'
 import { ORDER_STEPS } from '@widgets/OrderInfo/config/orderSteps'
+import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 export const useOrderInfo = () => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
+
   const navigate = useNavigate()
   const { pathname } = useLocation()
   const currentPath = getLastPathSegment(pathname)
@@ -64,20 +67,32 @@ export const useOrderInfo = () => {
         return
       }
 
-      handleCreateOrder()
+      handleModalOpen()
     }
   }
   const handleCreateOrder = () => {
     const orderNumber = `RU${Math.floor(100000000 + Math.random() * 900000000)}`
     console.log(`Заказ номер ${orderNumber}`)
     dispatch(setOrder({ id: orderNumber, ...orderInfo }))
+    handleModalClose()
   }
 
   const handleCancelOrder = () => {
     dispatch(clearOrder())
   }
 
+  const handleModalOpen = () => {
+    setIsModalOpen(true)
+  }
+
+  const handleModalClose = () => {
+    setIsModalOpen(false)
+  }
+
   return {
+    isModalOpen,
+    handleCreateOrder,
+    handleModalClose,
     isOrderCreated,
     orderState,
     totalCost,

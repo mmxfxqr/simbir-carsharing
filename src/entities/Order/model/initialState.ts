@@ -1,8 +1,8 @@
 import type { OrderState } from '@entities/Order/types'
-import { location } from '@pages/LocationPage/config/location'
+import { cityInitialValue } from '@pages/LocationPage'
 
 export const initialState: OrderState = {
-  city: Object.keys(location)[0],
+  city: cityInitialValue,
   address: null,
   location: null,
   car: null,

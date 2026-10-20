@@ -1,6 +1,6 @@
 import type { Locations } from '../types'
 
-export const location: Locations = {
+export const locations: Locations = {
   Ульяновск: {
     center: [54.317858, 48.397526],
     zoom: 13,
@@ -76,3 +76,5 @@ export const location: Locations = {
     },
   },
 }
+
+export const cityInitialValue = Object.keys(locations)[0]

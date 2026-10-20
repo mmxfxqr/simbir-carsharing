@@ -1,4 +1,4 @@
-import { TOTAL_ORDER_SERVICE_CONFIG } from '@widgets/TotalOrderCard/config/totalOrderServiceConfig'
+import { TOTAL_ORDER_SERVICE_CONFIG } from '@entities/Order/model/orderAdditionalService'
 import type { TotalOrderServiceItemsProps } from '@widgets/TotalOrderCard/types'
 import { TotalOrderTextItem } from '@widgets/TotalOrderCard/ui/TotalOrderTextItem'
 import type { FC } from 'react'

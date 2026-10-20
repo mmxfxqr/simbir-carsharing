@@ -1,9 +1,5 @@
-import type { AdditionalService } from '@entities/Car/types'
+import type { Service } from '@entities/Order/types'
 
 export interface ConfigurationAdditionalServicesProps {
-  additionalServices: {
-    fullTank: AdditionalService
-    childSeat: AdditionalService
-    rightHandDrive: AdditionalService
-  }
+  additionalServices: Service[]
 }

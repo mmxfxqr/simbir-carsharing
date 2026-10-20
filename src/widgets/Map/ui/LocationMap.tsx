@@ -1,6 +1,6 @@
 import type { FC } from 'react'
 import { Map, Placemark } from '@pbe/react-yandex-maps'
-import { location } from '@pages/LocationPage/config/location'
+import { locations } from '@pages/LocationPage'
 import { useAppSelector } from '@app/store'
 import { selectOrderAdress, selectOrderCity } from '@entities/Order'
 import { useTranslation } from 'react-i18next'
@@ -9,8 +9,8 @@ export const LocationMap: FC = () => {
   const { t } = useTranslation()
   const city = useAppSelector(selectOrderCity)
   const selectectedAdress = useAppSelector(selectOrderAdress)
-  const adresses = Object.entries(location[city].addresses)
-  const cityData = location[city]
+  const adresses = Object.entries(locations[city].addresses)
+  const cityData = locations[city]
   const center = selectectedAdress
     ? cityData.addresses[selectectedAdress]
     : cityData.center

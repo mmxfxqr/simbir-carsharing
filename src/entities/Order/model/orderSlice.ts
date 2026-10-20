@@ -3,7 +3,8 @@ import { initialState } from './initialState'
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import type { Nullable } from '@shared/types'
 import type { RateType } from '@widgets/ConfigurationRatePick/types'
-import type { Order } from '@entities/Order/types'
+import type { Order, Service } from '@entities/Order/types'
+import { cityInitialValue } from '@pages/LocationPage'
 
 const orderSlice = createSlice({
   name: 'order',
@@ -63,35 +64,39 @@ const orderSlice = createSlice({
     },
     setAdditionalServices: (
       state,
-      action: PayloadAction<Nullable<string[]>>,
+      action: PayloadAction<Nullable<Service[]>>,
     ) => {
       state.selectedAdditionalServices = action.payload
     },
     setOrder: (state, action: PayloadAction<Nullable<Order>>) => {
       state.order = action.payload
     },
+    clearLocation: (state) => {
+      state.location = null
+      state.city = cityInitialValue
+      state.address = null
+    },
     clearCar: (state) => {
-      state.car = null
+      if (state.car) {
+        state.car = null
+      }
     },
     clearConfiguration: (state) => {
-      state.cost = null
-      state.colorCost = null
-      state.rentDurationCost = null
-      state.selectedServicesCost = null
-      state.rentDuration = null
-      state.rentDurationMinutes = null
-      state.fromDate = null
-      state.toDate = null
-      state.selectedColor = null
-      state.selectedRate = null
-      state.selectedAdditionalServices = null
+      if (state.cost) {
+        state.cost = null
+        state.colorCost = null
+        state.rentDurationCost = null
+        state.selectedServicesCost = null
+        state.rentDuration = null
+        state.rentDurationMinutes = null
+        state.fromDate = null
+        state.toDate = null
+        state.selectedColor = null
+        state.selectedRate = null
+        state.selectedAdditionalServices = null
+      }
     },
-    clearOrder: (state) => {
-      state.location = null
-      clearCar()
-      clearConfiguration()
-      state.order = null
-    },
+    clearOrder: () => initialState,
   },
 })
 
@@ -113,6 +118,7 @@ export const {
   setSelectedRate,
   setAdditionalServices,
   setOrder,
+  clearLocation,
   clearCar,
   clearConfiguration,
   clearOrder,
