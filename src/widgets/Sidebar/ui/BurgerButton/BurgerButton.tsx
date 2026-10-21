@@ -1,6 +1,6 @@
 import type { FC } from 'react'
 import type { BurgerButtonProps } from './types'
-import { MenuIcon } from '@widgets/Sidebar/ui/BurgerButton/MenuIcon'
+import { MenuIcon } from './MenuIcon'
 
 export const BurgerButton: FC<BurgerButtonProps> = ({
   onBurgerClick,
