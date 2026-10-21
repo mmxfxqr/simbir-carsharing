@@ -50,5 +50,9 @@
   "Rental duration": "Rental duration",
   "Yes": "Yes",
   "Available from": "Available from",
-  "Order fuel": "Fuel"
+  "Order fuel": "Fuel",
+  "Login": "Login",
+  "Email": "Email",
+  "Password": "Password",
+  "Request access": "Request access"
 }

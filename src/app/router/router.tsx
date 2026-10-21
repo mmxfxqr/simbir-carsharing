@@ -1,7 +1,10 @@
 import { AppConfig } from '@app/config/appConfig'
-import { RoutePath } from '@app/config/routePath'
+import { AdminRoutePath, RoutePath } from '@app/config/routePath'
+import { AdminLayout } from '@app/layouts/AdminLayout'
 import { RootLayout } from '@app/layouts/RootLayout'
 import { ConfigurationGuard, ModelGuard, TotalGuard } from '@app/router/guards'
+import { AdminLoginPage } from '@pages/AdminLoginPage'
+import { AdminRegistrationPage } from '@pages/AdminRegistrationPage'
 import { ConfigurationPage } from '@pages/ConfigurationPage'
 import { HomePage } from '@pages/HomePage'
 import { LocationPage } from '@pages/LocationPage'
@@ -60,6 +63,20 @@ export const router = createBrowserRouter(
               ],
             },
           ],
+        },
+      ],
+    },
+    {
+      path: '/admin',
+      element: <AdminLayout />,
+      children: [
+        {
+          path: AdminRoutePath.Login,
+          element: <AdminLoginPage />,
+        },
+        {
+          path: AdminRoutePath.Registration,
+          element: <AdminRegistrationPage />,
         },
       ],
     },

@@ -5,3 +5,8 @@ export const RoutePath = {
   Configuration: 'configuration',
   Total: 'total',
 } as const
+
+export const AdminRoutePath = {
+  Login: 'login',
+  Registration: 'registration',
+} as const
