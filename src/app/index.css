@@ -12,6 +12,12 @@
   --color-white: #eeeeee;
 
   --font-roboto: 'Roboto', sans-serif;
+
+  --color-admin-primary: #007bff;
+  --color-admin-blue: #3d5170;
+  --color-admin-white: #fff;
+  --color-admin-gray: #becad6;
+  --color-admin-black: #495057;
 }
 
 body {

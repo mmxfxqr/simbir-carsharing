@@ -1,12 +1,13 @@
 import { Button } from '@shared/ui/Button'
 import type { ConfirmModalProps } from '../types'
 import type { FC } from 'react'
+import { createPortal } from 'react-dom'
 
 export const ConfirmModal: FC<ConfirmModalProps> = ({
   onCancelClick,
   onConfirmClick,
 }) => {
-  return (
+  return createPortal(
     <>
       <div
         className="fixed inset-0 z-10 bg-[#fff] opacity-90"
@@ -18,11 +19,16 @@ export const ConfirmModal: FC<ConfirmModalProps> = ({
           <Button className="w-full max-w-44.25" onClick={onConfirmClick}>
             Подтвердить
           </Button>
-          <Button className="w-full max-w-41" onClick={onCancelClick} isRed>
+          <Button
+            className="w-full max-w-41"
+            onClick={onCancelClick}
+            variant="danger"
+          >
             Вернуться
           </Button>
         </div>
       </div>
-    </>
+    </>,
+    document.body,
   )
 }

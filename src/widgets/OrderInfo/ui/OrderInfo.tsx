@@ -43,7 +43,7 @@ export const OrderInfo: FC = () => {
             className="max-xl: mx-auto w-full max-xl:max-w-36 max-xl:text-sm"
             disabled={!currentStep?.isComplete(orderState)}
             onClick={handleNextStepClick}
-            isRed={isOrderCreated}
+            variant={isOrderCreated ? 'danger' : 'primary'}
           >
             {isOrderCreated ? 'Отменить' : t(`${currentStep?.buttonText}`)}
           </Button>
