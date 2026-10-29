@@ -13,16 +13,16 @@ export const AdminLabelInput: FC<AdminInputProps> = ({
   ...props
 }) => {
   const inputClassName = clsx(
-    'box-border w-full appearance-none outline-none text-[11px]',
+    'box-border block w-full appearance-none text-[11px] leading-[13px] outline-none',
     className,
   )
 
   return (
-    <div className="flex flex-col gap-[16.5px]">
+    <div className="flex flex-col gap-2">
       <h6 className="text-admin-black text-[10.5px]">{label}</h6>
       <div
         className={twMerge(
-          'border-admin-gray text-admin-blue w-full rounded-[3px] border pt-2 pr-[7.35px] pb-[8.5px] pl-[11.65px]',
+          'border-admin-gray text-admin-blue w-full rounded-[3px] border px-[11.65px] py-[7px]',
         )}
       >
         <input
